@@ -4,8 +4,8 @@
   "description": "Aplikasi Arsip Dokumen Santri Mukim PP Ar Rohman Tegalrejo",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#0B1E3B",
-  "theme_color": "#0B1E3B",
+  "background_color": "#0A1916",
+  "theme_color": "#0A1916",
   "orientation": "portrait",
   "icons": [
     {
