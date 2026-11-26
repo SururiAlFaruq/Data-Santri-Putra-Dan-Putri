@@ -3,182 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#09203f" id="themeColorMeta" />
+  <meta name="theme-color" content="#0B1E3B" id="themeColorMeta" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Arsip Santri" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8=s256" />
-  <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8=s256" />
+  <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8&sz=w256" />
+  <link rel="apple-touch-icon" href="https://drive.google.com/thumbnail?id=1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8&sz=w256" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <title>Arsip Santri Mukim — PP Ar Rohman Tegalrejo</title>
   <style>
     :root {
-      --bg-page: linear-gradient(165deg, #eef6ff 0%, #ecfdf5 50%, #fefce8 100%);
-      --navy-teal-grad: linear-gradient(135deg, #091e3a 0%, #0d3b52 48%, #0f5959 100%);
-      --gold-grad: linear-gradient(135deg, #d97706 0%, #eab308 50%, #fde047 100%);
-      --gold-pill-border: #f3c64f;
-      --pa-grad: linear-gradient(135deg, #09203f 0%, #0284c7 55%, #0d9488 100%);
-      --pi-grad: linear-gradient(135deg, #701a75 0%, #db2777 55%, #d97706 100%);
-      --text: #0f172a;
-      --muted: #64748b;
-      --danger: #dc2626;
-      --danger-light: #fee2e2;
-      --success: #15803d;
-      --success-light: #dcfce7;
+      --indigo-deep: #0B1E3B;
+      --emerald-royal: #064E3B;
+      --teal-rich: #0F766E;
+      --gold: #F59E0B;
+      --gold-bright: #FCD34D;
+      --gold-soft: #FEF3C7;
+      --pa-grad: linear-gradient(135deg, #0B1E3B 0%, #0369A1 55%, #0F766E 100%);
+      --pi-grad: linear-gradient(135deg, #701A75 0%, #DB2777 55%, #D97706 100%);
+      --text: #0F172A;
+      --muted: #64748B;
+      --danger: #E11D48;
+      --danger-light: #FFE4E6;
+      --success: #059669;
+      --success-light: #D1FAE5;
       --radius: 18px;
-      --shadow: 0 8px 24px rgba(9, 30, 58, 0.08);
+      --shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
-      background: var(--bg-page);
+      background: linear-gradient(180deg, #E6F0F7 0%, #F4F7FA 45%, #EEF2F6 100%);
       color: var(--text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* WADAH LOGO PUTIH BERSIH BERBINGKAI EMAS (TUNGGAL & JELAS) */
-    .single-logo-pill {
-      background: #ffffff;
-      border: 2.5px solid var(--gold-pill-border);
-      border-radius: 999px;
-      padding: 12px 28px;
+    /* BANNER LOGO PUTIH BERSIH (SAMA PERSIS DENGAN ABSENSI UJIAN) */
+    .logo-banner-box {
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.26);
+      background: rgba(255, 255, 255, 0.96);
+      border: 1.5px solid rgba(252, 211, 77, 0.75);
+      border-radius: 16px;
+      padding: 10px 18px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
       width: 100%;
     }
 
-    .single-logo-pill img {
-      height: 68px;
-      width: auto;
+    .logo-banner-box img {
+      max-height: 64px;
       max-width: 100%;
-      object-fit: contain;
-      display: block;
-    }
-
-    /* Versi ringkas di Topbar */
-    .top-logo-pill {
-      background: #ffffff;
-      border: 2px solid var(--gold-pill-border);
-      border-radius: 999px;
-      padding: 6px 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      flex-shrink: 0;
-    }
-
-    .top-logo-pill img {
-      height: 36px;
       width: auto;
       object-fit: contain;
       display: block;
     }
 
-    /* MAHFUDZOT CARD */
+    .logo-banner-box.header-logo {
+      padding: 7px 14px;
+      margin-bottom: 12px;
+    }
+
+    .logo-banner-box.header-logo img {
+      max-height: 46px;
+    }
+
+    /* MAHFUDZOT HERO */
     .mahfudzot-box {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1.5px solid rgba(243, 198, 79, 0.7);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+      border: 1px solid rgba(252, 211, 77, 0.4);
       border-radius: 16px;
       padding: 11px 14px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       text-align: center;
     }
 
     .mahfudzot-arab {
-      font-family: "Amiri", "Traditional Arabic", "Scheherazade New", serif;
-      font-size: 20px;
+      font-family: 'Amiri', serif;
+      font-size: 22px;
       font-weight: 700;
-      color: #fde047;
-      line-height: 1.5;
+      color: var(--gold-bright);
+      line-height: 1.6;
       direction: rtl;
     }
 
     .mahfudzot-latin {
       font-size: 11.5px;
       font-weight: 700;
-      color: #fef9c3;
-      margin-top: 2px;
+      color: var(--gold-soft);
+      margin-top: 1px;
     }
 
     .mahfudzot-arti {
       font-size: 11px;
-      color: #cbd5e1;
+      color: #E2E8F0;
       font-style: italic;
       margin-top: 2px;
     }
 
     /* TOP HEADER */
     .topbar {
-      background: var(--navy-teal-grad);
+      background: linear-gradient(135deg, #0B1E3B 0%, #0F3D5E 52%, #065F46 100%);
       color: #fff;
-      padding: 11px 16px;
+      padding: 14px 16px 16px;
       position: sticky;
       top: 0;
       z-index: 30;
-      border-bottom: 2.5px solid var(--gold-pill-border);
-      box-shadow: 0 6px 22px rgba(9, 30, 58, 0.32);
+      border-bottom: 3px solid var(--gold);
+      box-shadow: 0 10px 24px rgba(6, 78, 59, 0.22);
     }
 
     .topbar-inner {
-      max-width: 680px;
+      max-width: 560px;
       margin: 0 auto;
+    }
+
+    .topbar-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
     }
 
-    .topbar-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
-
     .title-text h1 {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 800;
-      color: #fef08a;
-      letter-spacing: 0.3px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      color: #ffffff;
+      letter-spacing: -0.2px;
     }
 
     .title-text p {
-      font-size: 11px;
-      color: #e2e8f0;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      font-size: 11.5px;
+      color: var(--gold-soft);
+      margin-top: 2px;
     }
 
     .btn-ghost {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fef9c3;
-      border: 1.5px solid rgba(243, 198, 79, 0.7);
+      background: rgba(255, 255, 255, 0.14);
+      color: var(--gold-bright);
+      border: 1px solid rgba(252, 211, 77, 0.5);
       padding: 7px 11px;
-      border-radius: 999px;
+      border-radius: 10px;
       font-size: 11.5px;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
     }
     .btn-ghost:active { transform: scale(0.96); }
 
     .container {
       width: 100%;
-      max-width: 680px;
+      max-width: 560px;
       margin: 0 auto;
       padding: 16px;
       flex: 1;
@@ -192,67 +176,52 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
-      background: radial-gradient(circle at top right, #115e59 0%, #0d3b52 45%, #071930 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .login-wrap::before {
-      content: "";
-      position: absolute;
-      width: 340px;
-      height: 340px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(243, 198, 79, 0.22) 0%, transparent 70%);
-      top: -80px;
-      left: -60px;
-      pointer-events: none;
+      background: radial-gradient(circle at top right, #065F46 0%, #0B1E3B 55%, #071326 100%);
     }
 
     .login-shell {
-      position: relative;
-      z-index: 2;
       width: 100%;
-      max-width: 410px;
+      max-width: 390px;
       display: flex;
       flex-direction: column;
       gap: 14px;
     }
 
     .login-card {
-      background: rgba(13, 39, 68, 0.88);
-      backdrop-filter: blur(12px);
-      padding: 24px 22px 22px;
-      border-radius: 26px;
-      border: 2px solid var(--gold-pill-border);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.38);
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(10px);
+      padding: 22px 20px;
+      border-radius: 24px;
+      border: 1.5px solid rgba(252, 211, 77, 0.45);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
       text-align: center;
       color: #ffffff;
     }
 
     .gold-pill-tag {
       display: inline-block;
-      background: rgba(243, 198, 79, 0.14);
-      color: #fde047;
-      border: 1.5px solid var(--gold-pill-border);
-      font-size: 11px;
-      font-weight: 800;
-      padding: 5px 14px;
-      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.25), rgba(252, 211, 77, 0.12));
+      color: var(--gold-soft);
+      border: 1px solid rgba(252, 211, 77, 0.5);
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 99px;
       letter-spacing: 0.5px;
+      text-transform: uppercase;
       margin-bottom: 10px;
     }
 
     .login-card h2 {
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 6px;
+      color: var(--gold-bright);
+      margin-bottom: 10px;
     }
 
     .login-card p.desc {
       font-size: 12.5px;
-      color: #cbd5e1;
+      color: #CBD5E1;
       margin-bottom: 14px;
       line-height: 1.45;
     }
@@ -260,23 +229,25 @@
     input[type="password"], input[type="text"], select {
       width: 100%;
       padding: 12px 14px;
-      border: 1.5px solid #cbd5e1;
-      border-radius: 13px;
-      font-size: 15px;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
       outline: none;
-      background: #ffffff;
+      background: #F8FAFC;
       color: var(--text);
       transition: 0.15s;
     }
 
     .login-card input[type="password"] {
-      border: 2px solid var(--gold-pill-border);
-      background: #f8fafc;
+      border: 1.5px solid var(--gold-bright);
+      background: #ffffff;
     }
 
     input:focus, select:focus {
-      border-color: #eab308;
-      box-shadow: 0 0 0 3.5px rgba(243, 198, 79, 0.28);
+      border-color: var(--teal-rich);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.15);
     }
 
     .btn {
@@ -284,7 +255,7 @@
       padding: 13px 16px;
       border: none;
       border-radius: 13px;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 800;
       cursor: pointer;
       transition: 0.15s;
@@ -295,18 +266,16 @@
     }
 
     .btn-primary {
-      background: var(--navy-teal-grad);
-      color: #fef9c3;
-      border: 1.5px solid var(--gold-pill-border);
-      box-shadow: 0 6px 16px rgba(9, 30, 58, 0.22);
+      background: linear-gradient(135deg, #0B1E3B 0%, #0F3D5E 50%, #065F46 100%);
+      color: var(--gold-bright);
+      box-shadow: 0 6px 16px rgba(11, 30, 59, 0.22);
     }
-    .btn-primary:hover { filter: brightness(1.08); }
+    .btn-primary:hover { filter: brightness(1.06); }
 
     .btn-gold {
-      background: var(--gold-grad);
-      color: #271502;
-      border: 1.5px solid #fef08a;
-      box-shadow: 0 6px 18px rgba(234, 179, 8, 0.35);
+      background: linear-gradient(135deg, var(--gold), #D97706);
+      color: #0B1E3B;
+      box-shadow: 0 6px 16px rgba(245, 158, 11, 0.35);
     }
     .btn-gold:hover { filter: brightness(1.04); }
 
@@ -317,7 +286,7 @@
 
     .btn-sm {
       padding: 9px 13px;
-      font-size: 13px;
+      font-size: 12.5px;
       border-radius: 11px;
       width: auto;
     }
@@ -325,18 +294,18 @@
     .login-credit {
       margin-top: 16px;
       padding-top: 12px;
-      border-top: 1px dashed rgba(243, 198, 79, 0.4);
+      border-top: 1px dashed rgba(252, 211, 77, 0.35);
       font-size: 11.5px;
-      color: #cbd5e1;
+      color: #CBD5E1;
     }
     .login-credit strong {
-      color: #fde047;
+      color: var(--gold-bright);
     }
 
     /* Install PWA Banner */
     .install-banner {
-      background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%);
-      border: 1.5px solid #f59e0b;
+      background: linear-gradient(145deg, #FFFBEB, #FEF3C7);
+      border: 1.5px solid var(--gold);
       border-radius: 16px;
       padding: 12px 14px;
       margin-bottom: 14px;
@@ -344,16 +313,16 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+      box-shadow: var(--shadow);
     }
     .install-banner-text strong {
       display: block;
       font-size: 13px;
-      color: #78350f;
+      color: #92400E;
     }
     .install-banner-text span {
       font-size: 11.5px;
-      color: #92400e;
+      color: #B45309;
     }
 
     /* Navigation / Back Bar */
@@ -367,18 +336,18 @@
       background: #ffffff;
       padding: 10px 12px;
       border-radius: 16px;
-      border: 1.5px solid var(--gold-pill-border);
+      border: 1px solid rgba(203, 213, 225, 0.85);
       box-shadow: var(--shadow);
     }
 
     .back-btn {
-      background: var(--navy-teal-grad);
-      border: 1.5px solid var(--gold-pill-border);
-      color: #fef9c3;
+      background: linear-gradient(135deg, #0B1E3B, #065F46);
+      border: none;
+      color: var(--gold-bright);
       padding: 8px 14px;
-      border-radius: 999px;
+      border-radius: 11px;
       font-size: 12.5px;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -394,13 +363,13 @@
     .search-box input {
       padding-left: 40px;
       background: #ffffff;
-      border: 1.5px solid var(--gold-pill-border);
-      border-radius: 999px;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 14px;
       box-shadow: var(--shadow);
     }
     .search-box span {
       position: absolute;
-      left: 15px;
+      left: 14px;
       top: 50%;
       transform: translateY(-50%);
       font-size: 15px;
@@ -408,44 +377,38 @@
 
     /* Hero Banner with Mahfudzot */
     .hero-banner {
-      background: var(--navy-teal-grad);
+      background: linear-gradient(135deg, #0B1E3B 0%, #0F3D5E 52%, #065F46 100%);
       border-radius: 20px;
       padding: 15px 16px;
       margin-bottom: 16px;
-      border: 2px solid var(--gold-pill-border);
-      box-shadow: 0 10px 24px rgba(9, 30, 58, 0.2);
+      border: 1.5px solid var(--gold);
+      box-shadow: 0 10px 24px rgba(6, 78, 59, 0.18);
       color: #fff;
       text-align: center;
     }
-    .hero-banner .mahfudzot-arab {
-      font-size: 21px;
-    }
-    .hero-banner .mahfudzot-arti {
-      color: #e2e8f0;
-      margin-bottom: 8px;
-    }
     .hero-sub {
-      border-top: 1px dashed rgba(243, 198, 79, 0.45);
+      border-top: 1px dashed rgba(252, 211, 77, 0.4);
       padding-top: 8px;
-      font-size: 12px;
-      color: #fef08a;
+      margin-top: 8px;
+      font-size: 11.5px;
+      color: var(--gold-soft);
       font-weight: 600;
     }
 
-    /* Colorful Gender Cards */
+    /* Gender Cards */
     .gender-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      gap: 12px;
       margin-top: 8px;
     }
 
     .gender-card {
-      border-radius: 22px;
-      padding: 22px 16px;
+      border-radius: 20px;
+      padding: 20px 14px;
       text-align: center;
-      box-shadow: 0 10px 24px rgba(9, 30, 58, 0.16);
-      border: 2px solid var(--gold-pill-border);
+      box-shadow: 0 10px 24px rgba(11, 30, 59, 0.16);
+      border: 2px solid var(--gold-bright);
       cursor: pointer;
       transition: 0.18s;
       color: #ffffff;
@@ -453,59 +416,57 @@
 
     .gender-card.card-pa { background: var(--pa-grad); }
     .gender-card.card-pi { background: var(--pi-grad); }
-    .gender-card:hover { transform: translateY(-3px); }
+    .gender-card:hover { transform: translateY(-2px); }
     .gender-card:active { transform: scale(0.97); }
 
     .gender-badge {
-      width: 56px;
-      height: 56px;
-      border-radius: 18px;
-      margin: 0 auto 12px;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      margin: 0 auto 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
-      font-weight: 900;
+      font-size: 19px;
+      font-weight: 800;
       background: #ffffff;
-      border: 2px solid var(--gold-pill-border);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+      border: 2px solid var(--gold-bright);
     }
 
-    .card-pa .gender-badge { color: #09203f; }
-    .card-pi .gender-badge { color: #be185d; }
+    .card-pa .gender-badge { color: #0B1E3B; }
+    .card-pi .gender-badge { color: #BE185D; }
 
     .gender-card h3 {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 800;
-      color: #ffffff;
       margin-bottom: 6px;
     }
 
     .gender-card p {
       display: inline-block;
       background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(254, 240, 138, 0.75);
-      padding: 4px 12px;
-      border-radius: 999px;
-      font-size: 12px;
+      border: 1px solid rgba(252, 211, 77, 0.7);
+      padding: 4px 11px;
+      border-radius: 99px;
+      font-size: 11.5px;
       font-weight: 700;
-      color: #fef9c3;
+      color: var(--gold-soft);
     }
 
     /* Class Grid */
     .class-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 11px;
     }
 
     .class-card {
       background: #ffffff;
-      padding: 16px;
+      padding: 15px;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       cursor: pointer;
-      border: 1.5px solid rgba(243, 198, 79, 0.65);
+      border: 1px solid rgba(203, 213, 225, 0.85);
       position: relative;
       overflow: hidden;
       transition: 0.15s;
@@ -517,20 +478,20 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 5px;
-      background: var(--cls-accent, var(--navy-teal-grad));
+      height: 4px;
+      background: var(--cls-accent, linear-gradient(90deg, #0B1E3B, #0F766E, #F59E0B));
     }
 
     .class-card:hover {
       transform: translateY(-2px);
-      border-color: #eab308;
+      border-color: var(--gold);
     }
 
     .class-card h4 {
-      font-size: 16px;
+      font-size: 15.5px;
       font-weight: 800;
-      color: #091e3a;
-      margin-top: 4px;
+      color: var(--indigo-deep);
+      margin-top: 3px;
       margin-bottom: 10px;
     }
 
@@ -544,11 +505,11 @@
     }
 
     .kk-badge {
-      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-      color: #92400e;
-      border: 1px solid #f59e0b;
-      padding: 3px 9px;
-      border-radius: 999px;
+      background: var(--gold-soft);
+      color: #92400E;
+      border: 1px solid var(--gold);
+      padding: 2px 8px;
+      border-radius: 99px;
       font-weight: 800;
       font-size: 11px;
     }
@@ -565,8 +526,8 @@
       padding: 14px 16px;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      border: 1.5px solid rgba(243, 198, 79, 0.5);
-      border-left: 5px solid #0284c7;
+      border: 1px solid rgba(203, 213, 225, 0.85);
+      border-left: 5px solid #0369A1;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -576,18 +537,18 @@
     }
 
     .student-item.item-pi {
-      border-left-color: #db2777;
+      border-left-color: #DB2777;
     }
 
     .student-item:hover {
-      border-color: #eab308;
-      background: #fffbeb;
+      border-color: var(--gold);
+      background: #FFFBEB;
     }
 
     .student-name {
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 700;
-      color: #0f172a;
+      color: var(--text);
       margin-bottom: 4px;
     }
 
@@ -614,25 +575,25 @@
     .pill-ok {
       background: var(--success-light);
       color: var(--success);
-      border: 1px solid #86efac;
+      border: 1px solid #A7F3D0;
     }
 
     .pill-no {
-      background: #f1f5f9;
+      background: #F1F5F9;
       color: var(--muted);
     }
 
     .pill-extra {
-      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-      color: #92400e;
-      border: 1px solid #f59e0b;
+      background: var(--gold-soft);
+      color: #92400E;
+      border: 1px solid var(--gold);
     }
 
     /* Modal */
     .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(9, 30, 58, 0.66);
+      background: rgba(11, 30, 59, 0.72);
       backdrop-filter: blur(4px);
       z-index: 50;
       display: none;
@@ -645,18 +606,18 @@
     .modal-sheet {
       background: #ffffff;
       width: 100%;
-      max-width: 680px;
+      max-width: 560px;
       max-height: 92vh;
       overflow-y: auto;
-      border-radius: 26px 26px 0 0;
-      border-top: 3.5px solid var(--gold-pill-border);
+      border-radius: 24px 24px 0 0;
+      border-top: 3.5px solid var(--gold);
       padding: 20px 18px 32px;
       animation: slideUp 0.2s ease-out;
     }
 
     @media (min-width: 640px) {
       .modal-backdrop { align-items: center; padding: 16px; }
-      .modal-sheet { border-radius: 24px; border: 2.5px solid var(--gold-pill-border); }
+      .modal-sheet { border-radius: 22px; border: 2px solid var(--gold); }
     }
 
     @keyframes slideUp {
@@ -670,25 +631,25 @@
       align-items: flex-start;
       gap: 12px;
       padding-bottom: 14px;
-      border-bottom: 1.5px solid #f1f5f9;
+      border-bottom: 1.5px solid #F1F5F9;
       margin-bottom: 16px;
     }
 
     .close-btn {
-      background: #fef3c7;
-      border: 1.5px solid #f59e0b;
+      background: var(--gold-soft);
+      border: 1px solid var(--gold);
       width: 34px;
       height: 34px;
       border-radius: 50%;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 800;
       cursor: pointer;
-      color: #92400e;
+      color: #92400E;
     }
 
     .doc-card {
-      border: 1.5px solid rgba(243, 198, 79, 0.65);
-      background: linear-gradient(180deg, #ffffff 0%, #fefce8 100%);
+      border: 1px solid #CBD5E1;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
       border-radius: 16px;
       padding: 14px;
       margin-bottom: 12px;
@@ -703,8 +664,8 @@
 
     .doc-title {
       font-weight: 800;
-      font-size: 15px;
-      color: #091e3a;
+      font-size: 14.5px;
+      color: var(--indigo-deep);
     }
 
     .doc-actions {
@@ -715,12 +676,12 @@
 
     .link-btn {
       text-decoration: none;
-      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-      color: #78350f;
-      border: 1px solid #f59e0b;
+      background: var(--gold-soft);
+      color: #92400E;
+      border: 1px solid var(--gold);
       padding: 8px 12px;
       border-radius: 10px;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       display: inline-flex;
       align-items: center;
@@ -733,7 +694,7 @@
       align-items: center;
       padding: 10px 12px;
       background: #ffffff;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #E2E8F0;
       border-radius: 10px;
       margin-bottom: 8px;
       gap: 8px;
@@ -743,11 +704,11 @@
     .app-footer {
       text-align: center;
       padding: 18px 16px 26px;
-      font-size: 12px;
+      font-size: 11.5px;
       color: #475569;
     }
     .app-footer strong {
-      color: #091e3a;
+      color: var(--indigo-deep);
       font-weight: 800;
     }
 
@@ -755,26 +716,26 @@
     .overlay-loader {
       position: fixed;
       inset: 0;
-      background: rgba(9, 30, 58, 0.84);
-      backdrop-filter: blur(4px);
+      background: rgba(11, 30, 59, 0.88);
       z-index: 100;
       display: none;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 14px;
+      gap: 12px;
       font-weight: 700;
-      color: #fef08a;
+      color: #ffffff;
+      font-size: 14px;
     }
     .overlay-loader.show { display: flex; }
 
     .spinner {
-      width: 44px;
-      height: 44px;
-      border: 4px solid rgba(254, 240, 138, 0.25);
-      border-top-color: #fde047;
+      width: 38px;
+      height: 38px;
+      border: 3.5px solid rgba(252, 211, 77, 0.25);
+      border-top-color: var(--gold-bright);
       border-radius: 50%;
-      animation: spin 0.7s linear infinite;
+      animation: spin 0.8s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -783,16 +744,16 @@
       bottom: 22px;
       left: 50%;
       transform: translateX(-50%);
-      background: #091e3a;
-      color: #fef08a;
-      border: 1.5px solid var(--gold-pill-border);
+      background: linear-gradient(135deg, #0B1E3B, #065F46);
+      color: var(--gold-bright);
+      border: 1px solid var(--gold-bright);
       padding: 11px 18px;
-      border-radius: 999px;
+      border-radius: 99px;
       font-size: 13px;
       font-weight: 700;
       z-index: 120;
       display: none;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
       max-width: 90%;
       text-align: center;
     }
@@ -800,9 +761,9 @@
     .hidden { display: none !important; }
 
     .section-title {
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 800;
-      color: #92400e;
+      color: #0F3D5E;
       text-transform: uppercase;
       letter-spacing: 0.6px;
       margin-bottom: 10px;
@@ -823,24 +784,22 @@
   <!-- VIEW 1: LOGIN -->
   <div id="loginView" class="login-wrap">
     <div class="login-shell">
-      <!-- Wadah Logo Tunggal Putih Bersih Berbingkai Emas -->
-      <div class="single-logo-pill">
-        <img src="https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8=s500"
-             onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8&sz=w500';"
-             alt="Logo Pengasuhan Santri PP Ar-Rohman Tegalrejo" />
+      <!-- LOGO PUTIH BERSIH (ENDPOINT THUMBNAIL SAMA SEPERTI ABSENSI UJIAN) -->
+      <div class="logo-banner-box">
+        <img src="https://drive.google.com/thumbnail?id=1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8&sz=w600" alt="Pengasuhan Santri PP Ar-Rohman Tegalrejo" />
       </div>
 
       <div class="login-card">
-        <div class="gold-pill-tag">PENGASUHAN SANTRI • PP AR ROHMAN</div>
+        <div class="gold-pill-tag">Pengasuhan Santri &bull; PP Ar Rohman</div>
         <h2>Arsip Dokumen Santri Mukim</h2>
 
         <div class="mahfudzot-box">
           <div class="mahfudzot-arab">خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ</div>
           <div class="mahfudzot-latin">Khoirun naasi anfa'uhum linnaas</div>
-          <div class="mahfudzot-arti">"Sebaik-baik manusia adalah yang paling bermanfaat bagi manusia lainnya"</div>
+          <div class="mahfudzot-arti">"Sebaik-baik manusia adalah yang paling bermanfaat bagi manusia lainnya."</div>
         </div>
 
-        <p class="desc">Masukkan sandi pengurus untuk mengakses database & mengunggah berkas santri.</p>
+        <p class="desc">Masukkan sandi pengurus untuk mengakses database &amp; mengunggah berkas santri.</p>
 
         <form id="loginForm">
           <input type="password" id="pinInput" placeholder="••••" required autocomplete="off"
@@ -859,20 +818,20 @@
   <div id="appView" class="hidden" style="display:flex; flex-direction:column; min-height:100vh;">
     <div class="topbar">
       <div class="topbar-inner">
-        <div class="topbar-left">
-          <div class="top-logo-pill">
-            <img src="https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8=s300"
-                 onerror="this.onerror=null;this.src='https://drive.google.com/thumbnail?id=1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8&sz=w300';"
-                 alt="Logo Pengasuhan" />
-          </div>
+        <!-- LOGO PUTIH BERSIH DI HEADER -->
+        <div class="logo-banner-box header-logo">
+          <img src="https://drive.google.com/thumbnail?id=1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8&sz=w600" alt="Pengasuhan Santri PP Ar-Rohman Tegalrejo" />
+        </div>
+
+        <div class="topbar-row">
           <div class="title-text">
-            <h1>DATA SANTRI MUKIM</h1>
+            <h1>Arsip Data Santri Mukim</h1>
             <p id="topSubtitle">PP Ar Rohman Tegalrejo</p>
           </div>
-        </div>
-        <div style="display:flex; gap:6px; flex-shrink:0;">
-          <button class="btn-ghost" onclick="refreshData()">Refresh</button>
-          <button class="btn-ghost" onclick="logout()">Keluar</button>
+          <div style="display:flex; gap:6px; flex-shrink:0;">
+            <button class="btn-ghost" onclick="refreshData()">Sinkron</button>
+            <button class="btn-ghost" onclick="logout()">Keluar</button>
+          </div>
         </div>
       </div>
     </div>
@@ -898,11 +857,11 @@
         <div class="hero-banner">
           <div class="mahfudzot-arab">خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ</div>
           <div class="mahfudzot-latin">Khoirun naasi anfa'uhum linnaas</div>
-          <div class="mahfudzot-arti">"Sebaik-baik manusia adalah yang paling bermanfaat bagi manusia lainnya"</div>
-          <div class="hero-sub">Database Arsip KK, Surat Pernyataan & Formulir Santri Mukim</div>
+          <div class="mahfudzot-arti">"Sebaik-baik manusia adalah yang paling bermanfaat bagi manusia lainnya."</div>
+          <div class="hero-sub">Database Arsip KK, Surat Pernyataan &amp; Formulir Santri Mukim</div>
         </div>
 
-        <div class="section-title">Pilih Kategori Santri</div>
+        <div class="section-title">1. Pilih Kategori Santri</div>
         <div class="gender-grid">
           <div class="gender-card card-pa" onclick="selectGender('Putra')">
             <div class="gender-badge">PA</div>
@@ -916,7 +875,7 @@
           </div>
         </div>
 
-        <div style="margin-top:20px; display:flex; justify-content:space-between; align-items:center; gap:10px;">
+        <div style="margin-top:18px; display:flex; justify-content:space-between; align-items:center; gap:10px;">
           <button class="btn btn-primary btn-sm" id="manualInstallBtn" onclick="showInstallHelp()">📲 Instal di HP</button>
           <button class="btn btn-gold btn-sm" onclick="openAddStudentModal()">+ Tambah Santri Baru</button>
         </div>
@@ -936,7 +895,7 @@
       <div id="stepStudents" class="hidden">
         <div class="nav-bar">
           <button class="back-btn" id="backFromStudentsBtn" onclick="goBackFromStudents()">← Kembali ke Daftar Kelas</button>
-          <span id="studentListCount" style="font-size:13px; color:#92400e; font-weight:800;"></span>
+          <span id="studentListCount" style="font-size:13px; color:#92400E; font-weight:800;"></span>
         </div>
         <div class="section-title" id="studentSectionTitle">Daftar Santri</div>
         <div class="student-list" id="studentList"></div>
@@ -944,8 +903,8 @@
     </div>
 
     <footer class="app-footer">
-      Pengasuhan Santri • PP Ar Rohman Tegalrejo<br />
-      Dibuat & dikembangkan oleh <strong>Sururi Al Faruq</strong>
+      Pengasuhan Santri &bull; PP Ar Rohman Tegalrejo<br />
+      Dibuat &amp; dikembangkan oleh <strong>Sururi Al Faruq</strong>
     </footer>
   </div>
 
@@ -954,8 +913,8 @@
     <div class="modal-sheet">
       <div class="modal-header">
         <div>
-          <h3 id="modalStudentName" style="font-size:18px; color:#091e3a; margin-bottom:4px;">Nama Santri</h3>
-          <p id="modalStudentMeta" style="font-size:13px; color:#92400e; font-weight:700;">Putra • Kelas</p>
+          <h3 id="modalStudentName" style="font-size:17px; color:#0B1E3B; margin-bottom:4px;">Nama Santri</h3>
+          <p id="modalStudentMeta" style="font-size:12.5px; color:#92400E; font-weight:700;">Putra &bull; Kelas</p>
         </div>
         <button class="close-btn" onclick="closeModal('studentModal')">✕</button>
       </div>
@@ -967,71 +926,70 @@
           <span class="doc-title">Dokumen Lainnya (Opsional)</span>
         </div>
         <div id="otherDocsList" style="margin-bottom:12px;"></div>
-        <div style="display:flex; flex-direction:column; gap:8px; background:#fef9c3; border:1px solid #f59e0b; padding:12px; border-radius:12px;">
+        <div style="display:flex; flex-direction:column; gap:8px; background:#FFFBEB; border:1px solid #F59E0B; padding:12px; border-radius:12px;">
           <input type="text" id="extraDocLabel" placeholder="Nama dokumen (misal: Akta Kelahiran / KIP)" style="font-size:13px; padding:10px;" />
           <input type="file" id="extraDocFile" accept="image/*,.pdf" style="font-size:13px;" />
           <button class="btn btn-gold btn-sm" onclick="uploadExtraDoc()">+ Unggah Dokumen Tambahan</button>
         </div>
       </div>
 
-      <div style="margin-top:20px; padding-top:16px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+      <div style="margin-top:18px; padding-top:14px; border-top:1px solid #E2E8F0; display:flex; justify-content:space-between; align-items:center;">
         <span style="font-size:12px; color:var(--muted);">Santri tidak mukim / pindah?</span>
         <button class="btn btn-danger btn-sm" onclick="confirmDeleteStudent()">Hapus Data Santri</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL TAMBAH SANTRI BARU -->
+  <!-- MODAL TAMBAH SANTRI BARU (KELAS DIKUNCI HANYA KELAS YANG ADA) -->
   <div id="addStudentModal" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'addStudentModal')">
     <div class="modal-sheet">
       <div class="modal-header">
         <div>
-          <h3 style="font-size:18px; color:#091e3a;">Tambah Santri Mukim</h3>
-          <p style="font-size:13px; color:var(--muted);">Masukkan nama santri baru ke database</p>
+          <h3 style="font-size:17px; color:#0B1E3B;">Tambah Santri Mukim</h3>
+          <p style="font-size:12.5px; color:var(--muted);">Pilih kategori &amp; kelas resmi yang tersedia</p>
         </div>
         <button class="close-btn" onclick="closeModal('addStudentModal')">✕</button>
       </div>
       <form id="addStudentForm" style="display:flex; flex-direction:column; gap:12px;">
         <div>
-          <label style="font-size:13px; font-weight:700; color:#091e3a; display:block; margin-bottom:5px;">Nama Lengkap</label>
-          <input type="text" id="newStudentName" placeholder="Nama lengkap santri..." required />
+          <label style="font-size:12.5px; font-weight:700; color:#0B1E3B; display:block; margin-bottom:5px;">Nama Lengkap Santri</label>
+          <input type="text" id="newStudentName" placeholder="Ketik nama lengkap santri..." required />
         </div>
         <div>
-          <label style="font-size:13px; font-weight:700; color:#091e3a; display:block; margin-bottom:5px;">Kategori</label>
+          <label style="font-size:12.5px; font-weight:700; color:#0B1E3B; display:block; margin-bottom:5px;">Kategori</label>
           <select id="newStudentGender" required>
             <option value="Putra">Putra</option>
             <option value="Putri">Putri</option>
           </select>
         </div>
         <div>
-          <label style="font-size:13px; font-weight:700; color:#091e3a; display:block; margin-bottom:5px;">Kelas</label>
-          <input type="text" id="newStudentClass" list="classSuggestions" placeholder="Contoh: Idad, 1 Wustho, 1 Ulya..." required />
-          <datalist id="classSuggestions">
-            <option value="Idad"></option>
-            <option value="1 Wustho"></option>
-            <option value="2 Wustho"></option>
-            <option value="3 Wustho"></option>
-            <option value="4 Wustho"></option>
-            <option value="1 Ulya"></option>
-            <option value="2 Ulya"></option>
-          </datalist>
+          <label style="font-size:12.5px; font-weight:700; color:#0B1E3B; display:block; margin-bottom:5px;">Kelas (Sesuai Jenjang)</label>
+          <select id="newStudentClass" required>
+            <option value="Idad">Idad</option>
+            <option value="1 Wustho">1 Wustho</option>
+            <option value="2 Wustho">2 Wustho</option>
+            <option value="3 Wustho">3 Wustho</option>
+            <option value="4 Wustho">4 Wustho</option>
+            <option value="1 Ulya">1 Ulya</option>
+            <option value="2 Ulya">2 Ulya</option>
+          </select>
         </div>
-        <button type="submit" class="btn btn-gold" style="margin-top:6px;">Simpan Santri</button>
+        <button type="submit" class="btn btn-gold" style="margin-top:6px;">Simpan Santri ke Database</button>
       </form>
     </div>
   </div>
 
   <script>
     const API_URL = 'https://script.google.com/macros/s/AKfycbzyyYwkfKf1nRYb1eCO4qGz54eWria2v6LT4Lv8WYa5hTb_X6RBM3fEnC-3bSAbbQRMyw/exec';
-    const CLASS_ORDER = ['Idad', '1 Wustho', '2 Wustho', '3 Wustho', '4 Wustho', '1 Ulya', '2 Ulya'];
+    const ALLOWED_CLASSES = ['Idad', '1 Wustho', '2 Wustho', '3 Wustho', '4 Wustho', '1 Ulya', '2 Ulya'];
     const CLASS_ACCENTS = [
-      'linear-gradient(90deg, #059669, #34d399)',
-      'linear-gradient(90deg, #0284c7, #38bdf8)',
-      'linear-gradient(90deg, #7c3aed, #a78bfa)',
-      'linear-gradient(90deg, #d97706, #fbbf24)',
-      'linear-gradient(90deg, #db2777, #f472b6)',
-      'linear-gradient(90deg, #0d9488, #2dd4bf)',
-      'linear-gradient(90deg, #b45309, #facc15)'
+      'linear-gradient(90deg, #059669, #34D399)',
+      'linear-gradient(90deg, #0284C7, #38BDF8)',
+      'linear-gradient(90deg, #7C3AED, #A78BFA)',
+      'linear-gradient(90deg, #D97706, #FBBF24)',
+      'linear-gradient(90deg, #DB2777, #F472B6)',
+      'linear-gradient(90deg, #0D9488, #2DD4BF)',
+      'linear-gradient(90deg, #B45309, #FACC15)'
     ];
 
     let deferredPrompt = null;
@@ -1198,8 +1156,8 @@
     function renderClasses() {
       const list = state.students.filter(s => s.Jenis_Kelamin === state.selectedGender);
       const uniqueClasses = [...new Set(list.map(s => s.Kelas))].sort((a, b) => {
-        const ia = CLASS_ORDER.indexOf(a);
-        const ib = CLASS_ORDER.indexOf(b);
+        const ia = ALLOWED_CLASSES.indexOf(a);
+        const ib = ALLOWED_CLASSES.indexOf(b);
         if (ia !== -1 && ib !== -1) return ia - ib;
         if (ia !== -1) return -1;
         if (ib !== -1) return 1;
@@ -1262,7 +1220,7 @@
           <div class="student-item ${isPi ? 'item-pi' : ''}" onclick="openStudentModal('${s.ID_Santri}')">
             <div>
               <div class="student-name">${escapeHtml(s.Nama_Lengkap)}</div>
-              ${showClassMeta ? `<div class="student-sub">${escapeHtml(s.Jenis_Kelamin)} • ${escapeHtml(s.Kelas)}</div>` : ''}
+              ${showClassMeta ? `<div class="student-sub">${escapeHtml(s.Jenis_Kelamin)} &bull; ${escapeHtml(s.Kelas)}</div>` : ''}
               <div class="doc-pills">
                 <span class="pill ${s.Link_KK ? 'pill-ok' : 'pill-no'}">${s.Link_KK ? '✓ KK' : 'KK'}</span>
                 <span class="pill ${s.Link_SP ? 'pill-ok' : 'pill-no'}">${s.Link_SP ? '✓ SP' : 'SP'}</span>
@@ -1270,7 +1228,7 @@
                 ${extraCount > 0 ? `<span class="pill pill-extra">+${extraCount} Lainnya</span>` : ''}
               </div>
             </div>
-            <span style="color:#d97706; font-size:22px; font-weight:800;">›</span>
+            <span style="color:#D97706; font-size:22px; font-weight:800;">›</span>
           </div>
         `;
       }).join('');
@@ -1319,7 +1277,7 @@
         otherContainer.innerHTML = extras.map(item => `
           <div class="extra-item">
             <div>
-              <div style="font-size:13px; font-weight:700; color:#091e3a;">${escapeHtml(item.label)}</div>
+              <div style="font-size:13px; font-weight:700; color:#0B1E3B;">${escapeHtml(item.label)}</div>
               <div style="font-size:11px; color:var(--muted);">${escapeHtml(item.uploadedAt || '')}</div>
             </div>
             <div style="display:flex; gap:6px;">
@@ -1485,7 +1443,7 @@
       if (state.selectedGender) {
         document.getElementById('newStudentGender').value = state.selectedGender;
       }
-      if (state.selectedClass) {
+      if (state.selectedClass && ALLOWED_CLASSES.includes(state.selectedClass)) {
         document.getElementById('newStudentClass').value = state.selectedClass;
       }
       document.getElementById('addStudentModal').classList.add('open');
@@ -1495,8 +1453,12 @@
       e.preventDefault();
       const nama = document.getElementById('newStudentName').value.trim();
       const gender = document.getElementById('newStudentGender').value;
-      const kelas = document.getElementById('newStudentClass').value.trim();
-      if (!nama || !kelas) return;
+      const kelas = document.getElementById('newStudentClass').value;
+
+      if (!nama) return showToast('Nama santri tidak boleh kosong');
+      if (!ALLOWED_CLASSES.includes(kelas)) {
+        return showToast('Kelas tidak valid! Pilih kelas resmi yang tersedia.');
+      }
 
       showLoader('Menambahkan santri...');
       try {
