@@ -3,30 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#065f46" id="themeColorMeta" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Arsip Santri" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT=s256" />
+  <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT=s256" />
   <title>Arsip Santri Mukim — PP Ar Rohman Tegalrejo</title>
   <style>
     :root {
-      --bg-grad: linear-gradient(180deg, #f6faf8 0%, #edf6f2 55%, #fbf8ef 100%);
+      --bg-page: linear-gradient(160deg, #ecfdf5 0%, #eff6ff 48%, #fefce8 100%);
       --surface: #ffffff;
-      --emerald-deep: #042f2e;
+      --header-grad: linear-gradient(135deg, #065f46 0%, #0d9488 52%, #0284c7 100%);
+      --gold-grad: linear-gradient(135deg, #d97706 0%, #eab308 50%, #fde047 100%);
+      --gold-btn-grad: linear-gradient(135deg, #f59e0b 0%, #eab308 55%, #facc15 100%);
+      --pa-grad: linear-gradient(135deg, #065f46 0%, #0ea5e9 100%);
+      --pi-grad: linear-gradient(135deg, #be185d 0%, #f59e0b 100%);
+      --gold-border: rgba(234, 179, 8, 0.55);
       --emerald-dark: #064e3b;
-      --emerald-main: #0f766e;
-      --emerald-grad: linear-gradient(135deg, #042f2e 0%, #065f46 55%, #0f766e 100%);
-      --gold-grad: linear-gradient(135deg, #b45309 0%, #d4af37 50%, #f3d06b 100%);
-      --gold-soft-grad: linear-gradient(135deg, #fef9e7 0%, #fdf2d0 100%);
-      --gold-main: #c59b27;
-      --gold-bright: #e6c35c;
-      --gold-border: rgba(212, 175, 55, 0.42);
       --text: #0f172a;
       --muted: #64748b;
-      --border: #e2e8f0;
       --danger: #dc2626;
       --danger-light: #fee2e2;
       --success: #15803d;
       --success-light: #dcfce7;
-      --radius: 16px;
-      --shadow: 0 6px 20px rgba(6, 78, 59, 0.07);
-      --shadow-gold: 0 8px 24px rgba(180, 134, 24, 0.14);
+      --radius: 18px;
+      --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     }
 
     * {
@@ -37,22 +40,23 @@
     }
 
     body {
-      background: var(--bg-grad);
+      background: var(--bg-page);
       color: var(--text);
       min-height: 100vh;
-      padding-bottom: 44px;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Top Header */
+    /* TOP HEADER */
     .topbar {
-      background: var(--emerald-grad);
+      background: var(--header-grad);
       color: #fff;
-      padding: 13px 16px;
+      padding: 12px 16px;
       position: sticky;
       top: 0;
       z-index: 30;
-      border-bottom: 2px solid var(--gold-bright);
-      box-shadow: 0 4px 18px rgba(4, 47, 46, 0.25);
+      border-bottom: 2.5px solid #fde047;
+      box-shadow: 0 4px 20px rgba(6, 95, 70, 0.25);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -70,10 +74,11 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      background: rgba(255, 255, 255, 0.12);
+      background: #ffffff;
       padding: 4px 7px;
       border-radius: 12px;
-      border: 1px solid rgba(230, 195, 92, 0.45);
+      border: 1.5px solid #facc15;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       flex-shrink: 0;
     }
 
@@ -81,14 +86,16 @@
       width: 24px;
       height: 24px;
       object-fit: contain;
-      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+      background: #ffffff;
+      border-radius: 4px;
     }
 
     .topbar h1 {
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 800;
       line-height: 1.2;
-      color: #fffbeb;
+      color: #ffffff;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -96,7 +103,8 @@
 
     .topbar p {
       font-size: 11.5px;
-      color: #fde68a;
+      color: #fef08a;
+      font-weight: 600;
       margin-top: 2px;
       white-space: nowrap;
       overflow: hidden;
@@ -104,32 +112,34 @@
     }
 
     .btn-ghost {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fef3c7;
-      border: 1px solid rgba(230, 195, 92, 0.4);
-      padding: 7px 11px;
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      border: 1px solid rgba(254, 240, 138, 0.65);
+      padding: 7px 10px;
       border-radius: 10px;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
-      transition: 0.15s;
     }
-    .btn-ghost:active { transform: scale(0.97); opacity: 0.85; }
+    .btn-ghost:active { transform: scale(0.96); }
 
     .container {
+      width: 100%;
       max-width: 680px;
       margin: 0 auto;
       padding: 16px;
+      flex: 1;
     }
 
-    /* LOGIN SCREEN - ELEGANT EMERALD & GOLD */
+    /* LOGIN VIEW */
     .login-wrap {
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 20px;
-      background: radial-gradient(circle at top right, #0f766e 0%, #064e3b 42%, #022c22 100%);
+      background: linear-gradient(145deg, #065f46 0%, #0d9488 45%, #0369a1 85%, #b45309 100%);
       position: relative;
       overflow: hidden;
     }
@@ -137,23 +147,11 @@
     .login-wrap::before {
       content: "";
       position: absolute;
-      width: 320px;
-      height: 320px;
+      width: 340px;
+      height: 340px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, transparent 70%);
-      top: -80px;
-      left: -80px;
-      pointer-events: none;
-    }
-
-    .login-wrap::after {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, transparent 70%);
-      bottom: -90px;
+      background: radial-gradient(circle, rgba(253, 224, 71, 0.35) 0%, transparent 70%);
+      top: -90px;
       right: -70px;
       pointer-events: none;
     }
@@ -161,17 +159,17 @@
     .login-card {
       position: relative;
       z-index: 2;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.97);
       width: 100%;
       max-width: 400px;
-      padding: 30px 24px 28px;
-      border-radius: 24px;
-      border: 2px solid var(--gold-bright);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 0 4px rgba(212, 175, 55, 0.14);
+      padding: 28px 22px 24px;
+      border-radius: 26px;
+      border: 2.5px solid #facc15;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28), 0 0 0 5px rgba(253, 224, 71, 0.2);
       text-align: center;
     }
 
+    /* Kotak putih bersih untuk ketiga logo */
     .login-logos {
       display: flex;
       align-items: center;
@@ -180,50 +178,45 @@
       margin-bottom: 16px;
       padding: 12px 16px;
       border-radius: 18px;
-      background: linear-gradient(135deg, #042f2e 0%, #064e3b 100%);
-      border: 1.5px solid var(--gold-bright);
-      box-shadow: 0 6px 18px rgba(4, 47, 46, 0.22);
+      background: #ffffff;
+      border: 2px solid #facc15;
+      box-shadow: 0 6px 18px rgba(180, 134, 24, 0.16);
     }
 
     .login-logos img {
-      width: 54px;
-      height: 54px;
+      width: 56px;
+      height: 56px;
       object-fit: contain;
-      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.35));
-      transition: transform 0.2s ease;
+      background: #ffffff;
+      border-radius: 8px;
     }
 
-    .login-logos img:hover {
-      transform: scale(1.06);
-    }
-
-    .gold-divider {
-      height: 2px;
-      width: 72px;
-      margin: 0 auto 12px;
-      background: var(--gold-grad);
+    .gold-pill-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      color: #92400e;
+      border: 1px solid #f59e0b;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
       border-radius: 99px;
+      letter-spacing: 0.4px;
+      margin-bottom: 8px;
     }
 
     .login-card h2 {
-      font-size: 20px;
+      font-size: 21px;
       font-weight: 800;
-      color: var(--emerald-dark);
-      margin-bottom: 4px;
-    }
-
-    .login-subtitle {
-      font-size: 12.5px;
-      font-weight: 600;
-      color: #926c15;
-      margin-bottom: 8px;
-      letter-spacing: 0.3px;
+      background: linear-gradient(135deg, #065f46 0%, #0284c7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
     }
 
     .login-card p.desc {
       font-size: 13px;
       color: var(--muted);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       line-height: 1.45;
     }
 
@@ -231,26 +224,26 @@
       width: 100%;
       padding: 12px 14px;
       border: 1.5px solid #cbd5e1;
-      border-radius: 12px;
+      border-radius: 13px;
       font-size: 15px;
       outline: none;
       background: #fff;
       color: var(--text);
-      transition: border-color 0.15s, box-shadow 0.15s;
+      transition: 0.15s;
     }
 
     input:focus, select:focus {
-      border-color: var(--gold-main);
-      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+      border-color: #eab308;
+      box-shadow: 0 0 0 3.5px rgba(234, 179, 8, 0.22);
     }
 
     .btn {
       width: 100%;
       padding: 13px 16px;
       border: none;
-      border-radius: 12px;
+      border-radius: 13px;
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
       transition: 0.15s;
       display: inline-flex;
@@ -260,27 +253,20 @@
     }
 
     .btn-primary {
-      background: var(--emerald-grad);
-      color: #fffbeb;
-      border: 1px solid rgba(230, 195, 92, 0.5);
-      box-shadow: 0 4px 14px rgba(6, 78, 59, 0.22);
+      background: var(--header-grad);
+      color: #ffffff;
+      border: 1.5px solid #fde047;
+      box-shadow: 0 6px 16px rgba(13, 148, 136, 0.25);
     }
-    .btn-primary:hover { filter: brightness(1.06); }
-    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+    .btn-primary:hover { filter: brightness(1.05); }
 
     .btn-gold {
-      background: var(--gold-grad);
-      color: #271a04;
-      box-shadow: 0 4px 14px rgba(180, 134, 24, 0.28);
+      background: var(--gold-btn-grad);
+      color: #422006;
+      border: 1.5px solid #ca8a04;
+      box-shadow: 0 6px 18px rgba(234, 179, 8, 0.35);
     }
     .btn-gold:hover { filter: brightness(1.04); }
-
-    .btn-outline {
-      background: #fff;
-      color: var(--emerald-dark);
-      border: 1.5px solid var(--gold-border);
-    }
-    .btn-outline:hover { background: #fefce8; }
 
     .btn-danger {
       background: var(--danger-light);
@@ -288,25 +274,54 @@
     }
 
     .btn-sm {
-      padding: 8px 12px;
+      padding: 9px 13px;
       font-size: 13px;
-      border-radius: 10px;
+      border-radius: 11px;
       width: auto;
     }
 
-    /* Breadcrumb / Back bar */
+    /* Install PWA Banner */
+    .install-banner {
+      background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%);
+      border: 1.5px solid #f59e0b;
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+    }
+    .install-banner-text strong {
+      display: block;
+      font-size: 13px;
+      color: #78350f;
+    }
+    .install-banner-text span {
+      font-size: 11.5px;
+      color: #92400e;
+    }
+
+    /* Navigation / Back Bar */
     .nav-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 14px;
-      gap: 10px;
+      gap: 8px;
+      flex-wrap: wrap;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 10px 12px;
+      border-radius: 15px;
+      border: 1.5px solid var(--gold-border);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
     }
 
     .back-btn {
-      background: var(--surface);
-      border: 1.5px solid var(--gold-border);
-      color: var(--emerald-dark);
+      background: linear-gradient(135deg, #065f46 0%, #0d9488 100%);
+      border: 1.5px solid #fde047;
+      color: #ffffff;
       padding: 8px 14px;
       border-radius: 11px;
       font-size: 13px;
@@ -315,8 +330,9 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 3px 10px rgba(6, 95, 70, 0.2);
     }
+    .back-btn:active { transform: scale(0.97); }
 
     /* Search */
     .search-box {
@@ -325,8 +341,8 @@
     }
     .search-box input {
       padding-left: 40px;
-      background: var(--surface);
-      border: 1.5px solid var(--gold-border);
+      background: #ffffff;
+      border: 1.5px solid #facc15;
       box-shadow: var(--shadow);
     }
     .search-box span {
@@ -334,18 +350,17 @@
       left: 14px;
       top: 50%;
       transform: translateY(-50%);
-      color: var(--gold-main);
       font-size: 15px;
     }
 
-    /* Hero Banner inside App */
+    /* Hero Banner */
     .hero-banner {
-      background: var(--emerald-grad);
-      border-radius: 20px;
+      background: linear-gradient(135deg, #065f46 0%, #0d9488 55%, #0284c7 100%);
+      border-radius: 22px;
       padding: 16px 18px;
       margin-bottom: 18px;
-      border: 1.5px solid var(--gold-bright);
-      box-shadow: var(--shadow-gold);
+      border: 2px solid #fde047;
+      box-shadow: 0 10px 25px rgba(13, 148, 136, 0.22);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -354,27 +369,32 @@
     }
     .hero-banner h2 {
       font-size: 16px;
-      color: #fef3c7;
-      margin-bottom: 3px;
+      color: #fef08a;
+      font-weight: 800;
+      margin-bottom: 4px;
     }
     .hero-banner p {
       font-size: 12px;
-      color: #d1fae5;
+      color: #ecfdf5;
       line-height: 1.4;
     }
     .hero-logos {
       display: flex;
       gap: 6px;
+      background: #ffffff;
+      padding: 6px 8px;
+      border-radius: 14px;
+      border: 1.5px solid #facc15;
       flex-shrink: 0;
     }
     .hero-logos img {
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       object-fit: contain;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+      background: #ffffff;
     }
 
-    /* Gender Cards */
+    /* Colorful Gender Cards */
     .gender-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -383,73 +403,71 @@
     }
 
     .gender-card {
-      background: linear-gradient(180deg, #ffffff 0%, #fcfaf2 100%);
-      border-radius: 20px;
+      border-radius: 22px;
       padding: 22px 16px;
       text-align: center;
-      box-shadow: var(--shadow);
-      border: 1.5px solid var(--gold-border);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+      border: 2px solid #fde047;
       cursor: pointer;
       transition: 0.18s;
+      color: #ffffff;
       position: relative;
       overflow: hidden;
     }
 
-    .gender-card::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--gold-grad);
+    .gender-card.card-pa {
+      background: var(--pa-grad);
+    }
+
+    .gender-card.card-pi {
+      background: var(--pi-grad);
     }
 
     .gender-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-gold);
+      transform: translateY(-3px);
     }
 
     .gender-card:active {
-      transform: scale(0.98);
+      transform: scale(0.97);
     }
 
     .gender-badge {
-      width: 54px;
-      height: 54px;
-      border-radius: 16px;
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
       margin: 0 auto 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 20px;
-      font-weight: 800;
-      border: 1.5px solid var(--gold-bright);
+      font-weight: 900;
+      background: #ffffff;
+      border: 2px solid #fde047;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
-    .pa-bg {
-      background: linear-gradient(135deg, #064e3b 0%, #0f766e 100%);
-      color: #fde68a;
-    }
-
-    .pi-bg {
-      background: linear-gradient(135deg, #78350f 0%, #b45309 100%);
-      color: #fef3c7;
-    }
+    .card-pa .gender-badge { color: #065f46; }
+    .card-pi .gender-badge { color: #be185d; }
 
     .gender-card h3 {
-      font-size: 17px;
-      color: var(--emerald-dark);
-      margin-bottom: 4px;
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 6px;
     }
 
     .gender-card p {
-      font-size: 13px;
-      font-weight: 600;
-      color: #926c15;
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(254, 240, 138, 0.65);
+      padding: 4px 12px;
+      border-radius: 99px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #fef9c3;
     }
 
-    /* Class Grid */
+    /* Colorful Class Grid */
     .class-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -457,41 +475,56 @@
     }
 
     .class-card {
-      background: linear-gradient(180deg, #ffffff 0%, #fdfbf5 100%);
+      background: #ffffff;
       padding: 16px;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       cursor: pointer;
       border: 1.5px solid var(--gold-border);
+      position: relative;
+      overflow: hidden;
       transition: 0.15s;
     }
 
+    .class-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--cls-accent, var(--header-grad));
+    }
+
     .class-card:hover {
-      border-color: var(--gold-main);
-      box-shadow: var(--shadow-gold);
+      transform: translateY(-2px);
+      border-color: #eab308;
     }
 
     .class-card h4 {
       font-size: 16px;
+      font-weight: 800;
       color: var(--emerald-dark);
-      margin-bottom: 8px;
+      margin-top: 4px;
+      margin-bottom: 10px;
     }
 
     .class-meta {
       font-size: 12px;
       color: var(--muted);
+      font-weight: 600;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .kk-badge {
-      background: var(--gold-soft-grad);
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
       color: #92400e;
-      border: 1px solid var(--gold-border);
-      padding: 2px 8px;
+      border: 1px solid #f59e0b;
+      padding: 3px 9px;
       border-radius: 99px;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 11px;
     }
 
@@ -503,11 +536,12 @@
     }
 
     .student-item {
-      background: var(--surface);
+      background: #ffffff;
       padding: 14px 16px;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      border: 1px solid rgba(212, 175, 55, 0.28);
+      border: 1.5px solid rgba(234, 179, 8, 0.35);
+      border-left: 5px solid #0d9488;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -516,21 +550,26 @@
       transition: 0.15s;
     }
 
+    .student-item.item-pi {
+      border-left-color: #db2777;
+    }
+
     .student-item:hover {
-      border-color: var(--gold-main);
-      background: #fffdf7;
+      border-color: #eab308;
+      background: #fffbeb;
     }
 
     .student-name {
       font-size: 15px;
       font-weight: 700;
-      color: var(--emerald-deep);
+      color: #0f172a;
       margin-bottom: 4px;
     }
 
     .student-sub {
       font-size: 12px;
       color: var(--muted);
+      font-weight: 600;
     }
 
     .doc-pills {
@@ -550,7 +589,7 @@
     .pill-ok {
       background: var(--success-light);
       color: var(--success);
-      border: 1px solid #bbf7d0;
+      border: 1px solid #86efac;
     }
 
     .pill-no {
@@ -559,42 +598,40 @@
     }
 
     .pill-extra {
-      background: var(--gold-soft-grad);
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
       color: #92400e;
-      border: 1px solid var(--gold-border);
+      border: 1px solid #f59e0b;
     }
 
     /* Modal */
     .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(4, 47, 46, 0.62);
-      backdrop-filter: blur(3px);
+      background: rgba(6, 78, 59, 0.62);
+      backdrop-filter: blur(4px);
       z-index: 50;
       display: none;
       align-items: flex-end;
       justify-content: center;
     }
 
-    .modal-backdrop.open {
-      display: flex;
-    }
+    .modal-backdrop.open { display: flex; }
 
     .modal-sheet {
-      background: var(--surface);
+      background: #ffffff;
       width: 100%;
       max-width: 680px;
       max-height: 92vh;
       overflow-y: auto;
-      border-radius: 24px 24px 0 0;
-      border-top: 3px solid var(--gold-bright);
+      border-radius: 26px 26px 0 0;
+      border-top: 3.5px solid #facc15;
       padding: 20px 18px 32px;
       animation: slideUp 0.2s ease-out;
     }
 
     @media (min-width: 640px) {
       .modal-backdrop { align-items: center; padding: 16px; }
-      .modal-sheet { border-radius: 22px; border: 2px solid var(--gold-bright); }
+      .modal-sheet { border-radius: 24px; border: 2.5px solid #facc15; }
     }
 
     @keyframes slideUp {
@@ -614,20 +651,20 @@
 
     .close-btn {
       background: #fef3c7;
-      border: 1px solid var(--gold-border);
+      border: 1.5px solid #f59e0b;
       width: 34px;
       height: 34px;
       border-radius: 50%;
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
       color: #92400e;
     }
 
     .doc-card {
       border: 1.5px solid var(--gold-border);
-      background: linear-gradient(180deg, #ffffff 0%, #fdfcf8 100%);
-      border-radius: 14px;
+      background: linear-gradient(180deg, #ffffff 0%, #fefce8 100%);
+      border-radius: 16px;
       padding: 14px;
       margin-bottom: 12px;
     }
@@ -640,7 +677,7 @@
     }
 
     .doc-title {
-      font-weight: 700;
+      font-weight: 800;
       font-size: 15px;
       color: var(--emerald-dark);
     }
@@ -653,9 +690,9 @@
 
     .link-btn {
       text-decoration: none;
-      background: var(--gold-soft-grad);
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
       color: #78350f;
-      border: 1px solid var(--gold-border);
+      border: 1px solid #f59e0b;
       padding: 8px 12px;
       border-radius: 10px;
       font-size: 13px;
@@ -670,18 +707,40 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 12px;
-      background: #f8fafc;
+      background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 10px;
       margin-bottom: 8px;
       gap: 8px;
     }
 
+    /* Footer Credit */
+    .app-footer {
+      text-align: center;
+      padding: 18px 16px 26px;
+      font-size: 12px;
+      color: #475569;
+    }
+    .app-footer strong {
+      color: #065f46;
+      font-weight: 800;
+    }
+    .login-credit {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px dashed #cbd5e1;
+      font-size: 11.5px;
+      color: #64748b;
+    }
+    .login-credit strong {
+      color: #065f46;
+    }
+
     /* Loading & Toast */
     .overlay-loader {
       position: fixed;
       inset: 0;
-      background: rgba(4, 47, 46, 0.78);
+      background: rgba(6, 78, 59, 0.82);
       backdrop-filter: blur(4px);
       z-index: 100;
       display: none;
@@ -690,38 +749,32 @@
       justify-content: center;
       gap: 14px;
       font-weight: 700;
-      color: #fef3c7;
+      color: #fef08a;
     }
-
-    .overlay-loader.show {
-      display: flex;
-    }
+    .overlay-loader.show { display: flex; }
 
     .spinner {
-      width: 42px;
-      height: 42px;
-      border: 4px solid rgba(253, 230, 138, 0.25);
-      border-top-color: var(--gold-bright);
+      width: 44px;
+      height: 44px;
+      border: 4px solid rgba(254, 240, 138, 0.28);
+      border-top-color: #fde047;
       border-radius: 50%;
       animation: spin 0.7s linear infinite;
     }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
     .toast {
       position: fixed;
       bottom: 22px;
       left: 50%;
       transform: translateX(-50%);
-      background: var(--emerald-deep);
-      color: #fef3c7;
-      border: 1.5px solid var(--gold-bright);
+      background: #064e3b;
+      color: #fef08a;
+      border: 1.5px solid #facc15;
       padding: 11px 18px;
       border-radius: 12px;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       z-index: 120;
       display: none;
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
@@ -729,14 +782,12 @@
       text-align: center;
     }
 
-    .hidden {
-      display: none !important;
-    }
+    .hidden { display: none !important; }
 
     .section-title {
       font-size: 13px;
       font-weight: 800;
-      color: #926c15;
+      color: #92400e;
       text-transform: uppercase;
       letter-spacing: 0.6px;
       margin-bottom: 10px;
@@ -758,44 +809,35 @@
   <div id="loginView" class="login-wrap">
     <div class="login-card">
       <div class="login-logos">
-        <img src="https://drive.google.com/thumbnail?id=1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT&sz=w400"
-             onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT';"
-             alt="Logo Pondok" title="Logo Pondok" />
-        <img src="https://drive.google.com/thumbnail?id=1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8&sz=w400"
-             onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8';"
-             alt="Logo Pengasuhan" title="Logo Pengasuhan" />
-        <img src="https://drive.google.com/thumbnail?id=13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF&sz=w400"
-             onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF';"
-             alt="Logo Madin" title="Logo Madin" />
+        <img src="https://lh3.googleusercontent.com/d/1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT=s300" alt="Logo Pondok" title="Logo Pondok" />
+        <img src="https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8=s300" alt="Logo Pengasuhan" title="Logo Pengasuhan" />
+        <img src="https://lh3.googleusercontent.com/d/13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF=s300" alt="Logo Madin" title="Logo Madin" />
       </div>
 
-      <div class="gold-divider"></div>
-      <div class="login-subtitle">PP AR ROHMAN TEGALREJO</div>
+      <div class="gold-pill-tag">✦ PP AR ROHMAN TEGALREJO ✦</div>
       <h2>Arsip Dokumen Santri Mukim</h2>
       <p class="desc">Masukkan sandi pengurus untuk mengakses database & mengunggah berkas santri.</p>
 
       <form id="loginForm">
         <input type="password" id="pinInput" placeholder="••••" required autocomplete="off"
-               style="text-align:center; letter-spacing:4px; font-size:20px; font-weight:700; margin-bottom:14px;" />
+               style="text-align:center; letter-spacing:4px; font-size:20px; font-weight:800; margin-bottom:14px;" />
         <button type="submit" class="btn btn-gold" id="loginBtn">Masuk Aplikasi</button>
       </form>
+
+      <div class="login-credit">
+        Dikembangkan oleh <strong>Sururi Al Faruq</strong>
+      </div>
     </div>
   </div>
 
   <!-- VIEW 2: MAIN APP -->
-  <div id="appView" class="hidden">
+  <div id="appView" class="hidden" style="display:flex; flex-direction:column; min-height:100vh;">
     <div class="topbar">
       <div class="brand-wrap">
         <div class="top-logos">
-          <img src="https://drive.google.com/thumbnail?id=1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT&sz=w200"
-               onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT';"
-               alt="Logo Pondok" />
-          <img src="https://drive.google.com/thumbnail?id=1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8&sz=w200"
-               onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8';"
-               alt="Logo Pengasuhan" />
-          <img src="https://drive.google.com/thumbnail?id=13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF&sz=w200"
-               onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF';"
-               alt="Logo Madin" />
+          <img src="https://lh3.googleusercontent.com/d/1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT=s200" alt="Logo Pondok" />
+          <img src="https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8=s200" alt="Logo Pengasuhan" />
+          <img src="https://lh3.googleusercontent.com/d/13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF=s200" alt="Logo Madin" />
         </div>
         <div style="min-width:0;">
           <h1>Arsip Santri Mukim</h1>
@@ -809,6 +851,15 @@
     </div>
 
     <div class="container">
+      <!-- Banner Instal Aplikasi Android -->
+      <div id="installBanner" class="install-banner hidden">
+        <div class="install-banner-text">
+          <strong>📲 Pasang di Layar Utama HP</strong>
+          <span>Buka lebih cepat layaknya aplikasi Android</span>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="triggerInstallPWA()">Instal</button>
+      </div>
+
       <!-- Global Search -->
       <div class="search-box">
         <span>🔍</span>
@@ -823,41 +874,36 @@
             <p>Kelola arsip KK, Surat Pernyataan, Formulir & berkas santri Putra / Putri.</p>
           </div>
           <div class="hero-logos">
-            <img src="https://drive.google.com/thumbnail?id=1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT&sz=w200"
-                 onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT';"
-                 alt="Logo Pondok" />
-            <img src="https://drive.google.com/thumbnail?id=1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8&sz=w200"
-                 onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8';"
-                 alt="Logo Pengasuhan" />
-            <img src="https://drive.google.com/thumbnail?id=13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF&sz=w200"
-                 onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF';"
-                 alt="Logo Madin" />
+            <img src="https://lh3.googleusercontent.com/d/1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT=s200" alt="Logo Pondok" />
+            <img src="https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8=s200" alt="Logo Pengasuhan" />
+            <img src="https://lh3.googleusercontent.com/d/13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF=s200" alt="Logo Madin" />
           </div>
         </div>
 
         <div class="section-title">Pilih Kategori Santri</div>
         <div class="gender-grid">
-          <div class="gender-card" onclick="selectGender('Putra')">
-            <div class="gender-badge pa-bg">PA</div>
+          <div class="gender-card card-pa" onclick="selectGender('Putra')">
+            <div class="gender-badge">PA</div>
             <h3>Santri Putra</h3>
             <p id="countPutra">0 Santri Mukim</p>
           </div>
-          <div class="gender-card" onclick="selectGender('Putri')">
-            <div class="gender-badge pi-bg">PI</div>
+          <div class="gender-card card-pi" onclick="selectGender('Putri')">
+            <div class="gender-badge">PI</div>
             <h3>Santri Putri</h3>
             <p id="countPutri">0 Santri Mukim</p>
           </div>
         </div>
 
-        <div style="margin-top:20px; display:flex; justify-content:flex-end;">
+        <div style="margin-top:20px; display:flex; justify-content:space-between; align-items:center; gap:10px;">
+          <button class="btn btn-primary btn-sm" id="manualInstallBtn" onclick="showInstallHelp()">📲 Instal di HP</button>
           <button class="btn btn-gold btn-sm" onclick="openAddStudentModal()">+ Tambah Santri Baru</button>
         </div>
       </div>
 
-      <!-- STEP B: PILIH KELAS -->
+      <!-- STEP B: PILIH KELAS (SETELAH KLIK PUTRA/PUTRI) -->
       <div id="stepClass" class="hidden">
         <div class="nav-bar">
-          <button class="back-btn" onclick="goBackToGender()">← Kembali</button>
+          <button class="back-btn" onclick="goBackToGender()">← Kembali ke Menu Utama</button>
           <button class="btn btn-gold btn-sm" onclick="openAddStudentModal()">+ Tambah Santri</button>
         </div>
         <div class="section-title" id="classSectionTitle">Pilih Kelas</div>
@@ -867,13 +913,20 @@
       <!-- STEP C: DAFTAR SANTRI -->
       <div id="stepStudents" class="hidden">
         <div class="nav-bar">
-          <button class="back-btn" id="backFromStudentsBtn" onclick="goBackFromStudents()">← Kembali</button>
-          <span id="studentListCount" style="font-size:13px; color:#926c15; font-weight:700;"></span>
+          <div style="display:flex; gap:6px; flex-wrap:wrap;">
+            <button class="back-btn" id="backFromStudentsBtn" onclick="goBackFromStudents()">← Kembali ke Daftar Kelas</button>
+          </div>
+          <span id="studentListCount" style="font-size:13px; color:#92400e; font-weight:800;"></span>
         </div>
         <div class="section-title" id="studentSectionTitle">Daftar Santri</div>
         <div class="student-list" id="studentList"></div>
       </div>
     </div>
+
+    <footer class="app-footer">
+      Sistem Arsip Santri Mukim • PP Ar Rohman Tegalrejo<br />
+      Dibuat & dikembangkan oleh <strong>Sururi Al Faruq</strong>
+    </footer>
   </div>
 
   <!-- MODAL DETAIL & UPLOAD DOKUMEN SANTRI -->
@@ -882,29 +935,26 @@
       <div class="modal-header">
         <div>
           <h3 id="modalStudentName" style="font-size:18px; color:var(--emerald-dark); margin-bottom:4px;">Nama Santri</h3>
-          <p id="modalStudentMeta" style="font-size:13px; color:#926c15; font-weight:600;">Putra • Kelas</p>
+          <p id="modalStudentMeta" style="font-size:13px; color:#92400e; font-weight:700;">Putra • Kelas</p>
         </div>
         <button class="close-btn" onclick="closeModal('studentModal')">✕</button>
       </div>
 
-      <!-- Dokumen Utama: KK, SP, Formulir -->
       <div id="mainDocsContainer"></div>
 
-      <!-- Dokumen Lainnya -->
       <div class="doc-card">
         <div class="doc-card-head">
           <span class="doc-title">Dokumen Lainnya (Opsional)</span>
         </div>
         <div id="otherDocsList" style="margin-bottom:12px;"></div>
-        <div style="display:flex; flex-direction:column; gap:8px; background:#fefce8; border:1px solid var(--gold-border); padding:12px; border-radius:12px;">
+        <div style="display:flex; flex-direction:column; gap:8px; background:#fef9c3; border:1px solid #f59e0b; padding:12px; border-radius:12px;">
           <input type="text" id="extraDocLabel" placeholder="Nama dokumen (misal: Akta Kelahiran / KIP)" style="font-size:13px; padding:10px;" />
           <input type="file" id="extraDocFile" accept="image/*,.pdf" style="font-size:13px;" />
           <button class="btn btn-gold btn-sm" onclick="uploadExtraDoc()">+ Unggah Dokumen Tambahan</button>
         </div>
       </div>
 
-      <!-- Hapus Data Santri -->
-      <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+      <div style="margin-top:20px; padding-top:16px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
         <span style="font-size:12px; color:var(--muted);">Santri tidak mukim / pindah?</span>
         <button class="btn btn-danger btn-sm" onclick="confirmDeleteStudent()">Hapus Data Santri</button>
       </div>
@@ -954,7 +1004,17 @@
   <script>
     const API_URL = 'https://script.google.com/macros/s/AKfycbzyyYwkfKf1nRYb1eCO4qGz54eWria2v6LT4Lv8WYa5hTb_X6RBM3fEnC-3bSAbbQRMyw/exec';
     const CLASS_ORDER = ['Idad', '1 Wustho', '2 Wustho', '3 Wustho', '4 Wustho', '1 Ulya', '2 Ulya'];
+    const CLASS_ACCENTS = [
+      'linear-gradient(90deg, #059669, #34d399)',
+      'linear-gradient(90deg, #0284c7, #38bdf8)',
+      'linear-gradient(90deg, #7c3aed, #a78bfa)',
+      'linear-gradient(90deg, #d97706, #fbbf24)',
+      'linear-gradient(90deg, #db2777, #f472b6)',
+      'linear-gradient(90deg, #0d9488, #2dd4bf)',
+      'linear-gradient(90deg, #b45309, #facc15)'
+    ];
 
+    let deferredPrompt = null;
     let state = {
       pin: sessionStorage.getItem('santri_pin') || '',
       students: [],
@@ -963,6 +1023,42 @@
       activeStudentId: null,
       isSearching: false
     };
+
+    // Register Service Worker untuk PWA / Android Install
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+
+    // Tangkap event instalasi Android Chrome
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.getElementById('installBanner').classList.remove('hidden');
+    });
+
+    async function triggerInstallPWA() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          document.getElementById('installBanner').classList.add('hidden');
+          showToast('Aplikasi sedang dipasang di HP...');
+        }
+        deferredPrompt = null;
+      } else {
+        showInstallHelp();
+      }
+    }
+
+    function showInstallHelp() {
+      if (deferredPrompt) {
+        triggerInstallPWA();
+      } else {
+        alert('Cara pasang di HP Android:\n1. Buka link ini lewat Google Chrome.\n2. Ketuk ikon titik tiga (⋮) di pojok kanan atas Chrome.\n3. Pilih "Instal aplikasi" atau "Tambahkan ke layar utama".');
+      }
+    }
 
     window.addEventListener('DOMContentLoaded', () => {
       if (state.pin) {
@@ -1044,6 +1140,7 @@
         document.getElementById('stepClass').classList.remove('hidden');
       } else {
         document.getElementById('topSubtitle').textContent = `${state.selectedGender} • Kelas ${state.selectedClass}`;
+        document.getElementById('backFromStudentsBtn').textContent = '← Kembali ke Daftar Kelas';
         renderStudentList(
           state.students.filter(s => s.Jenis_Kelamin === state.selectedGender && s.Kelas === state.selectedClass),
           `Kelas ${state.selectedClass} (${state.selectedGender})`
@@ -1093,11 +1190,12 @@
 
       document.getElementById('classSectionTitle').textContent = `Daftar Kelas (${state.selectedGender})`;
       const grid = document.getElementById('classGrid');
-      grid.innerHTML = uniqueClasses.map(cls => {
+      grid.innerHTML = uniqueClasses.map((cls, idx) => {
         const members = list.filter(s => s.Kelas === cls);
         const kkDone = members.filter(s => s.Link_KK).length;
+        const accent = CLASS_ACCENTS[idx % CLASS_ACCENTS.length];
         return `
-          <div class="class-card" onclick="selectClass('${escapeHtml(cls)}')">
+          <div class="class-card" style="--cls-accent:${accent};" onclick="selectClass('${escapeHtml(cls)}')">
             <h4>${escapeHtml(cls)}</h4>
             <div class="class-meta">
               <span>${members.length} santri</span>
@@ -1120,6 +1218,7 @@
       document.getElementById('stepClass').classList.add('hidden');
       document.getElementById('stepStudents').classList.remove('hidden');
       document.getElementById('topSubtitle').textContent = 'Pencarian Santri';
+      document.getElementById('backFromStudentsBtn').textContent = '← Tutup Pencarian';
 
       const filtered = state.students.filter(s =>
         s.Nama_Lengkap.toLowerCase().includes(q) ||
@@ -1140,8 +1239,9 @@
 
       container.innerHTML = list.map(s => {
         const extraCount = (s.Dokumen_Lainnya_List || []).length;
+        const isPi = s.Jenis_Kelamin === 'Putri';
         return `
-          <div class="student-item" onclick="openStudentModal('${s.ID_Santri}')">
+          <div class="student-item ${isPi ? 'item-pi' : ''}" onclick="openStudentModal('${s.ID_Santri}')">
             <div>
               <div class="student-name">${escapeHtml(s.Nama_Lengkap)}</div>
               ${showClassMeta ? `<div class="student-sub">${escapeHtml(s.Jenis_Kelamin)} • ${escapeHtml(s.Kelas)}</div>` : ''}
@@ -1152,7 +1252,7 @@
                 ${extraCount > 0 ? `<span class="pill pill-extra">+${extraCount} Lainnya</span>` : ''}
               </div>
             </div>
-            <span style="color:#c59b27; font-size:20px; font-weight:700;">›</span>
+            <span style="color:#d97706; font-size:22px; font-weight:800;">›</span>
           </div>
         `;
       }).join('');
