@@ -524,6 +524,15 @@
       background: linear-gradient(90deg, var(--emerald-deep), var(--gold));
     }
 
+    .class-card.card-lulus {
+      background: linear-gradient(145deg, #FBF6E8 0%, #F4E9C8 100%);
+      border: 1.5px solid var(--gold);
+    }
+
+    .class-card.card-lulus::before {
+      background: linear-gradient(90deg, #B5891E, #E5C878);
+    }
+
     .class-card:hover { transform: translateY(-2px); border-color: var(--gold); }
     .class-card h4 { font-size: 15.5px; font-weight: 800; color: var(--emerald-obsidian); margin-top: 3px; margin-bottom: 10px; }
 
@@ -565,6 +574,7 @@
     }
 
     .student-item.item-pi { border-left-color: #57263B; }
+    .student-item.item-lulus { border-left-color: var(--gold); }
     .student-item:hover { border-color: var(--gold); background: #FCFBF7; }
 
     .student-name { font-size: 14.5px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
@@ -575,6 +585,7 @@
     .pill-ok { background: var(--success-light); color: var(--success); border: 1px solid #BBF7D0; }
     .pill-no { background: #F4F1EA; color: var(--muted); }
     .pill-extra { background: var(--gold-soft); color: #785D16; border: 1px solid rgba(197, 155, 39, 0.45); }
+    .pill-lulus { background: var(--emerald-deep); color: var(--gold-champagne); border: 1px solid var(--gold); }
 
     /* Modal */
     .modal-backdrop {
@@ -843,7 +854,7 @@
         <form id="loginForm">
           <div style="margin-bottom:10px;">
             <label class="login-field-label" for="operatorInput">Nama Pengurus Bertugas</label>
-            <input type="text" id="operatorInput" placeholder="Misal: Ust. Sururi / Mbak Aisyah" required />
+            <input type="text" id="operatorInput" placeholder="Misal: Ustadz Prabowo / Ustadzah Megawati" required />
           </div>
           <div style="margin-bottom:14px;">
             <label class="login-field-label" for="pinInput">Sandi Pengurus</label>
@@ -933,7 +944,7 @@
         </div>
 
         <div class="action-strip">
-          <button class="btn btn-primary btn-sm" onclick="openPromoteModal()">🎓 Kenaikan Kelas</button>
+          <button class="btn btn-primary btn-sm" onclick="openPromoteModal()">🎓 Kenaikan / Lulus</button>
           <button class="btn btn-gold btn-sm" onclick="openAddStudentModal()">+ Tambah Santri</button>
           <button class="btn btn-outline btn-sm" id="manualInstallBtn" onclick="showInstallHelp()">📲 Instal</button>
         </div>
@@ -944,7 +955,7 @@
         <div class="nav-bar">
           <button class="back-btn" onclick="goBackToGender()">← Kembali</button>
           <div style="display:flex; gap:6px;">
-            <button class="btn btn-primary btn-sm" onclick="openPromoteModal()">🎓 Naik Kelas</button>
+            <button class="btn btn-primary btn-sm" onclick="openPromoteModal()">🎓 Naik / Lulus</button>
             <button class="btn btn-gold btn-sm" onclick="openAddStudentModal()">+ Santri</button>
           </div>
         </div>
@@ -983,10 +994,10 @@
         </div>
       </div>
 
-      <!-- FORM EDIT NAMA / KATEGORI / KELAS -->
+      <!-- FORM EDIT NAMA / KATEGORI / KELAS / LULUS -->
       <div id="editStudentBox" class="doc-card hidden" style="background:var(--gold-soft); border-color:var(--gold);">
         <div class="doc-card-head">
-          <span class="doc-title">Edit Identitas &amp; Kelas Santri</span>
+          <span class="doc-title">Edit Identitas, Kelas &amp; Kelulusan</span>
         </div>
         <div style="display:flex; flex-direction:column; gap:10px;">
           <div>
@@ -1002,7 +1013,7 @@
               </select>
             </div>
             <div>
-              <label style="font-size:11.5px; font-weight:700; color:var(--emerald-obsidian); display:block; margin-bottom:4px;">Kelas</label>
+              <label style="font-size:11.5px; font-weight:700; color:var(--emerald-obsidian); display:block; margin-bottom:4px;">Kelas / Status</label>
               <select id="editStudentClass" style="background:#fff;">
                 <option value="Idad">Idad</option>
                 <option value="1 Wustho">1 Wustho</option>
@@ -1011,7 +1022,7 @@
                 <option value="4 Wustho">4 Wustho</option>
                 <option value="1 Ulya">1 Ulya</option>
                 <option value="2 Ulya">2 Ulya</option>
-                <option value="Alumni / Lulus">Alumni / Lulus</option>
+                <option value="Lulus">🎓 Lulus</option>
               </select>
             </div>
           </div>
@@ -1082,13 +1093,13 @@
     </div>
   </div>
 
-  <!-- MODAL KENAIKAN KELAS MASSAL -->
+  <!-- MODAL KENAIKAN KELAS & KELULUSAN MASSAL -->
   <div id="promoteModal" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'promoteModal')">
     <div class="modal-sheet">
       <div class="modal-header">
         <div>
-          <h3 style="font-size:17px; color:var(--emerald-obsidian);">🎓 Kenaikan Kelas Massal</h3>
-          <p style="font-size:12px; color:var(--muted);">Pindahkan santri ke jenjang kelas berikutnya sekaligus</p>
+          <h3 style="font-size:17px; color:var(--emerald-obsidian);">🎓 Kenaikan Kelas &amp; Kelulusan</h3>
+          <p style="font-size:12px; color:var(--muted);">Naikkan kelas atau luluskan santri kelas 2 Ulya sekaligus</p>
         </div>
         <button class="close-btn" onclick="closeModal('promoteModal')">✕</button>
       </div>
@@ -1116,15 +1127,15 @@
             </select>
           </div>
           <div>
-            <label style="font-size:12px; font-weight:700; color:var(--emerald-obsidian); display:block; margin-bottom:4px;">Naik ke Kelas</label>
-            <select id="promoteToClass">
+            <label style="font-size:12px; font-weight:700; color:var(--emerald-obsidian); display:block; margin-bottom:4px;">Tujuan (Naik / Lulus)</label>
+            <select id="promoteToClass" onchange="updatePromoteButtonLabel()">
               <option value="1 Wustho">1 Wustho</option>
               <option value="2 Wustho">2 Wustho</option>
               <option value="3 Wustho">3 Wustho</option>
               <option value="4 Wustho">4 Wustho</option>
               <option value="1 Ulya">1 Ulya</option>
               <option value="2 Ulya">2 Ulya</option>
-              <option value="Alumni / Lulus">Alumni / Lulus</option>
+              <option value="Lulus">🎓 Lulus (Setelah 2 Ulya)</option>
             </select>
           </div>
         </div>
@@ -1136,7 +1147,7 @@
 
         <div id="promoteCandidatesList" class="promote-list"></div>
 
-        <button type="button" class="btn btn-gold" onclick="submitPromoteClass()">Proses Kenaikan Kelas</button>
+        <button type="button" class="btn btn-gold" id="promoteSubmitBtn" onclick="submitPromoteClass()">Proses Kenaikan Kelas</button>
       </div>
     </div>
   </div>
@@ -1157,7 +1168,7 @@
 
   <script>
     const API_URL = 'https://script.google.com/macros/s/AKfycbzyyYwkfKf1nRYb1eCO4qGz54eWria2v6LT4Lv8WYa5hTb_X6RBM3fEnC-3bSAbbQRMyw/exec';
-    const ALLOWED_CLASSES = ['Idad', '1 Wustho', '2 Wustho', '3 Wustho', '4 Wustho', '1 Ulya', '2 Ulya', 'Alumni / Lulus'];
+    const ALLOWED_CLASSES = ['Idad', '1 Wustho', '2 Wustho', '3 Wustho', '4 Wustho', '1 Ulya', '2 Ulya', 'Lulus'];
     const ADDABLE_CLASSES = ['Idad', '1 Wustho', '2 Wustho', '3 Wustho', '4 Wustho', '1 Ulya', '2 Ulya'];
 
     let deferredPrompt = null;
@@ -1298,11 +1309,12 @@
         renderClasses();
         document.getElementById('stepClass').classList.remove('hidden');
       } else {
-        document.getElementById('topSubtitle').textContent = `${state.selectedGender} • Kelas ${state.selectedClass}`;
+        const labelKelas = state.selectedClass === 'Lulus' ? '🎓 Lulus' : `Kelas ${state.selectedClass}`;
+        document.getElementById('topSubtitle').textContent = `${state.selectedGender} • ${labelKelas}`;
         document.getElementById('backFromStudentsBtn').textContent = '← Kembali ke Daftar Kelas';
         renderStudentList(
           state.students.filter(s => s.Jenis_Kelamin === state.selectedGender && s.Kelas === state.selectedClass),
-          `Kelas ${state.selectedClass} (${state.selectedGender})`
+          `${labelKelas} (${state.selectedGender})`
         );
         document.getElementById('stepStudents').classList.remove('hidden');
       }
@@ -1347,14 +1359,15 @@
         return a.localeCompare(b);
       });
 
-      document.getElementById('classSectionTitle').textContent = `Daftar Kelas (${state.selectedGender})`;
+      document.getElementById('classSectionTitle').textContent = `Daftar Kelas & Status (${state.selectedGender})`;
       const grid = document.getElementById('classGrid');
       grid.innerHTML = uniqueClasses.map(cls => {
         const members = list.filter(s => s.Kelas === cls);
         const kkDone = members.filter(s => s.Link_KK).length;
+        const isLulus = cls === 'Lulus';
         return `
-          <div class="class-card" onclick="selectClass('${escapeHtml(cls)}')">
-            <h4>${escapeHtml(cls)}</h4>
+          <div class="class-card ${isLulus ? 'card-lulus' : ''}" onclick="selectClass('${escapeHtml(cls)}')">
+            <h4>${isLulus ? '🎓 Lulus' : escapeHtml(cls)}</h4>
             <div class="class-meta">
               <span>${members.length} santri</span>
               <span class="kk-badge">KK: ${kkDone}/${members.length}</span>
@@ -1398,12 +1411,14 @@
       container.innerHTML = list.map(s => {
         const extraCount = (s.Dokumen_Lainnya_List || []).length;
         const isPi = s.Jenis_Kelamin === 'Putri';
+        const isLulus = s.Kelas === 'Lulus';
         return `
-          <div class="student-item ${isPi ? 'item-pi' : ''}" onclick="openStudentModal('${s.ID_Santri}')">
+          <div class="student-item ${isLulus ? 'item-lulus' : (isPi ? 'item-pi' : '')}" onclick="openStudentModal('${s.ID_Santri}')">
             <div>
               <div class="student-name">${escapeHtml(s.Nama_Lengkap)}</div>
-              ${showClassMeta ? `<div class="student-sub">${escapeHtml(s.Jenis_Kelamin)} &bull; ${escapeHtml(s.Kelas)}</div>` : ''}
+              ${showClassMeta ? `<div class="student-sub">${escapeHtml(s.Jenis_Kelamin)} &bull; ${isLulus ? '🎓 Lulus' : escapeHtml(s.Kelas)}</div>` : ''}
               <div class="doc-pills">
+                ${isLulus && !showClassMeta ? `<span class="pill pill-lulus">🎓 Lulus</span>` : ''}
                 <span class="pill ${s.Link_KK ? 'pill-ok' : 'pill-no'}">${s.Link_KK ? '✓ KK' : 'KK'}</span>
                 <span class="pill ${s.Link_SP ? 'pill-ok' : 'pill-no'}">${s.Link_SP ? '✓ SP' : 'SP'}</span>
                 <span class="pill ${s.Link_Formulir ? 'pill-ok' : 'pill-no'}">${s.Link_Formulir ? '✓ Formulir' : 'Formulir'}</span>
@@ -1427,8 +1442,9 @@
     }
 
     function renderStudentModal(s) {
+      const labelKelas = s.Kelas === 'Lulus' ? '🎓 Lulus' : `Kelas ${s.Kelas}`;
       document.getElementById('modalStudentName').textContent = s.Nama_Lengkap;
-      document.getElementById('modalStudentMeta').textContent = `${s.Jenis_Kelamin} • Kelas ${s.Kelas} • ID: ${s.ID_Santri}`;
+      document.getElementById('modalStudentMeta').textContent = `${s.Jenis_Kelamin} • ${labelKelas} • ID: ${s.ID_Santri}`;
 
       document.getElementById('editStudentName').value = s.Nama_Lengkap;
       document.getElementById('editStudentGender').value = s.Jenis_Kelamin;
@@ -1512,7 +1528,7 @@
         if (!data.ok) throw new Error(data.error || 'Gagal menyimpan perubahan');
 
         toggleEditStudentBox(false);
-        showToast('Data santri berhasil diperbarui!');
+        showToast(kelas === 'Lulus' ? 'Status santri diperbarui menjadi Lulus!' : 'Data santri berhasil diperbarui!');
         await fetchStudents(state.pin, true);
       } catch (err) {
         showToast('Error: ' + err.message);
@@ -1723,7 +1739,7 @@
       }
     });
 
-    // ================= KENAIKAN KELAS MASSAL =================
+    // ================= KENAIKAN KELAS & KELULUSAN MASSAL =================
     function openPromoteModal() {
       if (state.selectedGender) {
         document.getElementById('promoteGender').value = state.selectedGender;
@@ -1741,7 +1757,14 @@
       if (idx !== -1 && idx + 1 < ALLOWED_CLASSES.length) {
         document.getElementById('promoteToClass').value = ALLOWED_CLASSES[idx + 1];
       }
+      updatePromoteButtonLabel();
       refreshPromoteCandidates();
+    }
+
+    function updatePromoteButtonLabel() {
+      const toCls = document.getElementById('promoteToClass').value;
+      const btn = document.getElementById('promoteSubmitBtn');
+      btn.textContent = toCls === 'Lulus' ? '🎓 Proses Kelulusan Santri' : 'Proses Kenaikan Kelas';
     }
 
     function refreshPromoteCandidates() {
@@ -1778,11 +1801,15 @@
       const selectedIds = Array.from(document.querySelectorAll('.promote-cb:checked')).map(cb => cb.value);
 
       if (fromClass === toClass) return showToast('Kelas tujuan tidak boleh sama dengan kelas asal');
-      if (selectedIds.length === 0) return showToast('Pilih minimal 1 santri untuk dinaikkan');
+      if (selectedIds.length === 0) return showToast('Pilih minimal 1 santri terlebih dahulu');
 
-      if (!confirm(`Naikkan ${selectedIds.length} santri ${gender} dari kelas "${fromClass}" ke "${toClass}"?`)) return;
+      const confirmMsg = toClass === 'Lulus'
+        ? `Luluskan ${selectedIds.length} santri ${gender} dari kelas "${fromClass}"?`
+        : `Naikkan ${selectedIds.length} santri ${gender} dari kelas "${fromClass}" ke "${toClass}"?`;
 
-      showLoader('Memproses kenaikan kelas...');
+      if (!confirm(confirmMsg)) return;
+
+      showLoader(toClass === 'Lulus' ? 'Memproses kelulusan santri...' : 'Memproses kenaikan kelas...');
       try {
         const res = await fetch(API_URL, {
           method: 'POST',
@@ -1798,10 +1825,10 @@
           })
         });
         const data = await res.json();
-        if (!data.ok) throw new Error(data.error || 'Gagal memproses kenaikan kelas');
+        if (!data.ok) throw new Error(data.error || 'Gagal memproses data');
 
         closeModal('promoteModal');
-        showToast(`${data.count} santri naik ke ${toClass}!`);
+        showToast(toClass === 'Lulus' ? `${data.count} santri dinyatakan Lulus!` : `${data.count} santri naik ke ${toClass}!`);
         await fetchStudents(state.pin, true);
       } catch (err) {
         showToast('Error: ' + err.message);
