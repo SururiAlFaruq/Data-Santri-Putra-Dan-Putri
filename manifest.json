@@ -1,21 +1,21 @@
 {
-  "name": "Arsip Santri Mukim - PP Ar Rohman",
+  "name": "Arsip Santri Mukim - Pengasuhan Santri",
   "short_name": "Arsip Santri",
   "description": "Aplikasi Arsip Dokumen Santri Mukim PP Ar Rohman Tegalrejo",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#065f46",
-  "theme_color": "#065f46",
+  "background_color": "#09203f",
+  "theme_color": "#09203f",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "https://lh3.googleusercontent.com/d/1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT=s192",
+      "src": "https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8=s192",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "https://lh3.googleusercontent.com/d/1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT=s512",
+      "src": "https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8=s512",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
