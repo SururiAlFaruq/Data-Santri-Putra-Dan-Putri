@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Arsip Santri Mukim — PP Ar Rohman Tegalrejo</title>
+  <style>
+    :root {
+      --bg-grad: linear-gradient(180deg, #f6faf8 0%, #edf6f2 55%, #fbf8ef 100%);
+      --surface: #ffffff;
+      --emerald-deep: #042f2e;
+      --emerald-dark: #064e3b;
+      --emerald-main: #0f766e;
+      --emerald-grad: linear-gradient(135deg, #042f2e 0%, #065f46 55%, #0f766e 100%);
+      --gold-grad: linear-gradient(135deg, #b45309 0%, #d4af37 50%, #f3d06b 100%);
+      --gold-soft-grad: linear-gradient(135deg, #fef9e7 0%, #fdf2d0 100%);
+      --gold-main: #c59b27;
+      --gold-bright: #e6c35c;
+      --gold-border: rgba(212, 175, 55, 0.42);
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --radius: 16px;
+      --shadow: 0 6px 20px rgba(6, 78, 59, 0.07);
+      --shadow-gold: 0 8px 24px rgba(180, 134, 24, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background: var(--bg-grad);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 44px;
+    }
+
+    /* Top Header */
+    .topbar {
+      background: var(--emerald-grad);
+      color: #fff;
+      padding: 13px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 2px solid var(--gold-bright);
+      box-shadow: 0 4px 18px rgba(4, 47, 46, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .top-logos {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 4px 7px;
+      border-radius: 12px;
+      border: 1px solid rgba(230, 195, 92, 0.45);
+      flex-shrink: 0;
+    }
+
+    .top-logos img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+    }
+
+    .topbar h1 {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #fffbeb;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .topbar p {
+      font-size: 11.5px;
+      color: #fde68a;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fef3c7;
+      border: 1px solid rgba(230, 195, 92, 0.4);
+      padding: 7px 11px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .btn-ghost:active { transform: scale(0.97); opacity: 0.85; }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    /* LOGIN SCREEN - ELEGANT EMERALD & GOLD */
+    .login-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: radial-gradient(circle at top right, #0f766e 0%, #064e3b 42%, #022c22 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login-wrap::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, transparent 70%);
+      top: -80px;
+      left: -80px;
+      pointer-events: none;
+    }
+
+    .login-wrap::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, transparent 70%);
+      bottom: -90px;
+      right: -70px;
+      pointer-events: none;
+    }
+
+    .login-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      width: 100%;
+      max-width: 400px;
+      padding: 30px 24px 28px;
+      border-radius: 24px;
+      border: 2px solid var(--gold-bright);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 0 4px rgba(212, 175, 55, 0.14);
+      text-align: center;
+    }
+
+    .login-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 16px;
+      padding: 12px 16px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #042f2e 0%, #064e3b 100%);
+      border: 1.5px solid var(--gold-bright);
+      box-shadow: 0 6px 18px rgba(4, 47, 46, 0.22);
+    }
+
+    .login-logos img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.35));
+      transition: transform 0.2s ease;
+    }
+
+    .login-logos img:hover {
+      transform: scale(1.06);
+    }
+
+    .gold-divider {
+      height: 2px;
+      width: 72px;
+      margin: 0 auto 12px;
+      background: var(--gold-grad);
+      border-radius: 99px;
+    }
+
+    .login-card h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--emerald-dark);
+      margin-bottom: 4px;
+    }
+
+    .login-subtitle {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #926c15;
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .login-card p.desc {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.45;
+    }
+
+    input[type="password"], input[type="text"], select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 12px;
+      font-size: 15px;
+      outline: none;
+      background: #fff;
+      color: var(--text);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--gold-main);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 13px 16px;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.15s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--emerald-grad);
+      color: #fffbeb;
+      border: 1px solid rgba(230, 195, 92, 0.5);
+      box-shadow: 0 4px 14px rgba(6, 78, 59, 0.22);
+    }
+    .btn-primary:hover { filter: brightness(1.06); }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .btn-gold {
+      background: var(--gold-grad);
+      color: #271a04;
+      box-shadow: 0 4px 14px rgba(180, 134, 24, 0.28);
+    }
+    .btn-gold:hover { filter: brightness(1.04); }
+
+    .btn-outline {
+      background: #fff;
+      color: var(--emerald-dark);
+      border: 1.5px solid var(--gold-border);
+    }
+    .btn-outline:hover { background: #fefce8; }
+
+    .btn-danger {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .btn-sm {
+      padding: 8px 12px;
+      font-size: 13px;
+      border-radius: 10px;
+      width: auto;
+    }
+
+    /* Breadcrumb / Back bar */
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      gap: 10px;
+    }
+
+    .back-btn {
+      background: var(--surface);
+      border: 1.5px solid var(--gold-border);
+      color: var(--emerald-dark);
+      padding: 8px 14px;
+      border-radius: 11px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Search */
+    .search-box {
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .search-box input {
+      padding-left: 40px;
+      background: var(--surface);
+      border: 1.5px solid var(--gold-border);
+      box-shadow: var(--shadow);
+    }
+    .search-box span {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold-main);
+      font-size: 15px;
+    }
+
+    /* Hero Banner inside App */
+    .hero-banner {
+      background: var(--emerald-grad);
+      border-radius: 20px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+      border: 1.5px solid var(--gold-bright);
+      box-shadow: var(--shadow-gold);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: #fff;
+    }
+    .hero-banner h2 {
+      font-size: 16px;
+      color: #fef3c7;
+      margin-bottom: 3px;
+    }
+    .hero-banner p {
+      font-size: 12px;
+      color: #d1fae5;
+      line-height: 1.4;
+    }
+    .hero-logos {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .hero-logos img {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    /* Gender Cards */
+    .gender-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .gender-card {
+      background: linear-gradient(180deg, #ffffff 0%, #fcfaf2 100%);
+      border-radius: 20px;
+      padding: 22px 16px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1.5px solid var(--gold-border);
+      cursor: pointer;
+      transition: 0.18s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gender-card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gold-grad);
+    }
+
+    .gender-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .gender-card:active {
+      transform: scale(0.98);
+    }
+
+    .gender-badge {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 800;
+      border: 1.5px solid var(--gold-bright);
+    }
+
+    .pa-bg {
+      background: linear-gradient(135deg, #064e3b 0%, #0f766e 100%);
+      color: #fde68a;
+    }
+
+    .pi-bg {
+      background: linear-gradient(135deg, #78350f 0%, #b45309 100%);
+      color: #fef3c7;
+    }
+
+    .gender-card h3 {
+      font-size: 17px;
+      color: var(--emerald-dark);
+      margin-bottom: 4px;
+    }
+
+    .gender-card p {
+      font-size: 13px;
+      font-weight: 600;
+      color: #926c15;
+    }
+
+    /* Class Grid */
+    .class-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .class-card {
+      background: linear-gradient(180deg, #ffffff 0%, #fdfbf5 100%);
+      padding: 16px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      border: 1.5px solid var(--gold-border);
+      transition: 0.15s;
+    }
+
+    .class-card:hover {
+      border-color: var(--gold-main);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .class-card h4 {
+      font-size: 16px;
+      color: var(--emerald-dark);
+      margin-bottom: 8px;
+    }
+
+    .class-meta {
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .kk-badge {
+      background: var(--gold-soft-grad);
+      color: #92400e;
+      border: 1px solid var(--gold-border);
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 11px;
+    }
+
+    /* Student List */
+    .student-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .student-item {
+      background: var(--surface);
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .student-item:hover {
+      border-color: var(--gold-main);
+      background: #fffdf7;
+    }
+
+    .student-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--emerald-deep);
+      margin-bottom: 4px;
+    }
+
+    .student-sub {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .doc-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .pill-ok {
+      background: var(--success-light);
+      color: var(--success);
+      border: 1px solid #bbf7d0;
+    }
+
+    .pill-no {
+      background: #f1f5f9;
+      color: var(--muted);
+    }
+
+    .pill-extra {
+      background: var(--gold-soft-grad);
+      color: #92400e;
+      border: 1px solid var(--gold-border);
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 47, 46, 0.62);
+      backdrop-filter: blur(3px);
+      z-index: 50;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-sheet {
+      background: var(--surface);
+      width: 100%;
+      max-width: 680px;
+      max-height: 92vh;
+      overflow-y: auto;
+      border-radius: 24px 24px 0 0;
+      border-top: 3px solid var(--gold-bright);
+      padding: 20px 18px 32px;
+      animation: slideUp 0.2s ease-out;
+    }
+
+    @media (min-width: 640px) {
+      .modal-backdrop { align-items: center; padding: 16px; }
+      .modal-sheet { border-radius: 22px; border: 2px solid var(--gold-bright); }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      padding-bottom: 14px;
+      border-bottom: 1.5px solid #f1f5f9;
+      margin-bottom: 16px;
+    }
+
+    .close-btn {
+      background: #fef3c7;
+      border: 1px solid var(--gold-border);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      color: #92400e;
+    }
+
+    .doc-card {
+      border: 1.5px solid var(--gold-border);
+      background: linear-gradient(180deg, #ffffff 0%, #fdfcf8 100%);
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .doc-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .doc-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--emerald-dark);
+    }
+
+    .doc-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .link-btn {
+      text-decoration: none;
+      background: var(--gold-soft-grad);
+      color: #78350f;
+      border: 1px solid var(--gold-border);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .extra-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      gap: 8px;
+    }
+
+    /* Loading & Toast */
+    .overlay-loader {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 47, 46, 0.78);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      font-weight: 700;
+      color: #fef3c7;
+    }
+
+    .overlay-loader.show {
+      display: flex;
+    }
+
+    .spinner {
+      width: 42px;
+      height: 42px;
+      border: 4px solid rgba(253, 230, 138, 0.25);
+      border-top-color: var(--gold-bright);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--emerald-deep);
+      color: #fef3c7;
+      border: 1.5px solid var(--gold-bright);
+      padding: 11px 18px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      z-index: 120;
+      display: none;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+      max-width: 90%;
+      text-align: center;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #926c15;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading Overlay -->
+  <div id="loader" class="overlay-loader">
+    <div class="spinner"></div>
+    <div id="loaderText">Memuat data...</div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <!-- VIEW 1: LOGIN -->
+  <div id="loginView" class="login-wrap">
+    <div class="login-card">
+      <div class="login-logos">
+        <img src="https://drive.google.com/thumbnail?id=1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT&sz=w400"
+             onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT';"
+             alt="Logo Pondok" title="Logo Pondok" />
+        <img src="https://drive.google.com/thumbnail?id=1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8&sz=w400"
+             onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8';"
+             alt="Logo Pengasuhan" title="Logo Pengasuhan" />
+        <img src="https://drive.google.com/thumbnail?id=13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF&sz=w400"
+             onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF';"
+             alt="Logo Madin" title="Logo Madin" />
+      </div>
+
+      <div class="gold-divider"></div>
+      <div class="login-subtitle">PP AR ROHMAN TEGALREJO</div>
+      <h2>Arsip Dokumen Santri Mukim</h2>
+      <p class="desc">Masukkan sandi pengurus untuk mengakses database & mengunggah berkas santri.</p>
+
+      <form id="loginForm">
+        <input type="password" id="pinInput" placeholder="••••" required autocomplete="off"
+               style="text-align:center; letter-spacing:4px; font-size:20px; font-weight:700; margin-bottom:14px;" />
+        <button type="submit" class="btn btn-gold" id="loginBtn">Masuk Aplikasi</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- VIEW 2: MAIN APP -->
+  <div id="appView" class="hidden">
+    <div class="topbar">
+      <div class="brand-wrap">
+        <div class="top-logos">
+          <img src="https://drive.google.com/thumbnail?id=1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT&sz=w200"
+               onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT';"
+               alt="Logo Pondok" />
+          <img src="https://drive.google.com/thumbnail?id=1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8&sz=w200"
+               onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8';"
+               alt="Logo Pengasuhan" />
+          <img src="https://drive.google.com/thumbnail?id=13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF&sz=w200"
+               onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF';"
+               alt="Logo Madin" />
+        </div>
+        <div style="min-width:0;">
+          <h1>Arsip Santri Mukim</h1>
+          <p id="topSubtitle">PP Ar Rohman Tegalrejo</p>
+        </div>
+      </div>
+      <div style="display:flex; gap:6px; flex-shrink:0;">
+        <button class="btn-ghost" onclick="refreshData()">Refresh</button>
+        <button class="btn-ghost" onclick="logout()">Keluar</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Global Search -->
+      <div class="search-box">
+        <span>🔍</span>
+        <input type="text" id="globalSearch" placeholder="Cari nama santri atau kelas..." oninput="handleSearch(this.value)" />
+      </div>
+
+      <!-- STEP A: PILIH PUTRA / PUTRI -->
+      <div id="stepGender">
+        <div class="hero-banner">
+          <div>
+            <h2>Database Terpadu Santri Mukim</h2>
+            <p>Kelola arsip KK, Surat Pernyataan, Formulir & berkas santri Putra / Putri.</p>
+          </div>
+          <div class="hero-logos">
+            <img src="https://drive.google.com/thumbnail?id=1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT&sz=w200"
+                 onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1erjNngfDxUenNx5-cZ9_A4Wa1Pi8opYT';"
+                 alt="Logo Pondok" />
+            <img src="https://drive.google.com/thumbnail?id=1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8&sz=w200"
+                 onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/1WLFTf2kO2it7wHKfe2ycOIlV1hyLWRq8';"
+                 alt="Logo Pengasuhan" />
+            <img src="https://drive.google.com/thumbnail?id=13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF&sz=w200"
+                 onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/d/13L_3algwKL1xAdZX0EYmmAjeHCBX6wFF';"
+                 alt="Logo Madin" />
+          </div>
+        </div>
+
+        <div class="section-title">Pilih Kategori Santri</div>
+        <div class="gender-grid">
+          <div class="gender-card" onclick="selectGender('Putra')">
+            <div class="gender-badge pa-bg">PA</div>
+            <h3>Santri Putra</h3>
+            <p id="countPutra">0 Santri Mukim</p>
+          </div>
+          <div class="gender-card" onclick="selectGender('Putri')">
+            <div class="gender-badge pi-bg">PI</div>
+            <h3>Santri Putri</h3>
+            <p id="countPutri">0 Santri Mukim</p>
+          </div>
+        </div>
+
+        <div style="margin-top:20px; display:flex; justify-content:flex-end;">
+          <button class="btn btn-gold btn-sm" onclick="openAddStudentModal()">+ Tambah Santri Baru</button>
+        </div>
+      </div>
+
+      <!-- STEP B: PILIH KELAS -->
+      <div id="stepClass" class="hidden">
+        <div class="nav-bar">
+          <button class="back-btn" onclick="goBackToGender()">← Kembali</button>
+          <button class="btn btn-gold btn-sm" onclick="openAddStudentModal()">+ Tambah Santri</button>
+        </div>
+        <div class="section-title" id="classSectionTitle">Pilih Kelas</div>
+        <div class="class-grid" id="classGrid"></div>
+      </div>
+
+      <!-- STEP C: DAFTAR SANTRI -->
+      <div id="stepStudents" class="hidden">
+        <div class="nav-bar">
+          <button class="back-btn" id="backFromStudentsBtn" onclick="goBackFromStudents()">← Kembali</button>
+          <span id="studentListCount" style="font-size:13px; color:#926c15; font-weight:700;"></span>
+        </div>
+        <div class="section-title" id="studentSectionTitle">Daftar Santri</div>
+        <div class="student-list" id="studentList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DETAIL & UPLOAD DOKUMEN SANTRI -->
+  <div id="studentModal" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'studentModal')">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <div>
+          <h3 id="modalStudentName" style="font-size:18px; color:var(--emerald-dark); margin-bottom:4px;">Nama Santri</h3>
+          <p id="modalStudentMeta" style="font-size:13px; color:#926c15; font-weight:600;">Putra • Kelas</p>
+        </div>
+        <button class="close-btn" onclick="closeModal('studentModal')">✕</button>
+      </div>
+
+      <!-- Dokumen Utama: KK, SP, Formulir -->
+      <div id="mainDocsContainer"></div>
+
+      <!-- Dokumen Lainnya -->
+      <div class="doc-card">
+        <div class="doc-card-head">
+          <span class="doc-title">Dokumen Lainnya (Opsional)</span>
+        </div>
+        <div id="otherDocsList" style="margin-bottom:12px;"></div>
+        <div style="display:flex; flex-direction:column; gap:8px; background:#fefce8; border:1px solid var(--gold-border); padding:12px; border-radius:12px;">
+          <input type="text" id="extraDocLabel" placeholder="Nama dokumen (misal: Akta Kelahiran / KIP)" style="font-size:13px; padding:10px;" />
+          <input type="file" id="extraDocFile" accept="image/*,.pdf" style="font-size:13px;" />
+          <button class="btn btn-gold btn-sm" onclick="uploadExtraDoc()">+ Unggah Dokumen Tambahan</button>
+        </div>
+      </div>
+
+      <!-- Hapus Data Santri -->
+      <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-size:12px; color:var(--muted);">Santri tidak mukim / pindah?</span>
+        <button class="btn btn-danger btn-sm" onclick="confirmDeleteStudent()">Hapus Data Santri</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL TAMBAH SANTRI BARU -->
+  <div id="addStudentModal" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'addStudentModal')">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <div>
+          <h3 style="font-size:18px; color:var(--emerald-dark);">Tambah Santri Mukim</h3>
+          <p style="font-size:13px; color:var(--muted);">Masukkan nama santri baru ke database</p>
+        </div>
+        <button class="close-btn" onclick="closeModal('addStudentModal')">✕</button>
+      </div>
+      <form id="addStudentForm" style="display:flex; flex-direction:column; gap:12px;">
+        <div>
+          <label style="font-size:13px; font-weight:700; color:var(--emerald-dark); display:block; margin-bottom:5px;">Nama Lengkap</label>
+          <input type="text" id="newStudentName" placeholder="Nama lengkap santri..." required />
+        </div>
+        <div>
+          <label style="font-size:13px; font-weight:700; color:var(--emerald-dark); display:block; margin-bottom:5px;">Kategori</label>
+          <select id="newStudentGender" required>
+            <option value="Putra">Putra</option>
+            <option value="Putri">Putri</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:13px; font-weight:700; color:var(--emerald-dark); display:block; margin-bottom:5px;">Kelas</label>
+          <input type="text" id="newStudentClass" list="classSuggestions" placeholder="Contoh: Idad, 1 Wustho, 1 Ulya..." required />
+          <datalist id="classSuggestions">
+            <option value="Idad"></option>
+            <option value="1 Wustho"></option>
+            <option value="2 Wustho"></option>
+            <option value="3 Wustho"></option>
+            <option value="4 Wustho"></option>
+            <option value="1 Ulya"></option>
+            <option value="2 Ulya"></option>
+          </datalist>
+        </div>
+        <button type="submit" class="btn btn-gold" style="margin-top:6px;">Simpan Santri</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const API_URL = 'https://script.google.com/macros/s/AKfycbzyyYwkfKf1nRYb1eCO4qGz54eWria2v6LT4Lv8WYa5hTb_X6RBM3fEnC-3bSAbbQRMyw/exec';
+    const CLASS_ORDER = ['Idad', '1 Wustho', '2 Wustho', '3 Wustho', '4 Wustho', '1 Ulya', '2 Ulya'];
+
+    let state = {
+      pin: sessionStorage.getItem('santri_pin') || '',
+      students: [],
+      selectedGender: null,
+      selectedClass: null,
+      activeStudentId: null,
+      isSearching: false
+    };
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (state.pin) {
+        fetchStudents(state.pin, true);
+      }
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const pin = document.getElementById('pinInput').value.trim();
+      if (!pin) return;
+      fetchStudents(pin, false);
+    });
+
+    async function fetchStudents(pin, silentInit = false) {
+      showLoader('Memuat data santri...');
+      try {
+        const res = await fetch(`${API_URL}?pin=${encodeURIComponent(pin)}`);
+        const data = await res.json();
+        if (!data.ok) {
+          sessionStorage.removeItem('santri_pin');
+          state.pin = '';
+          if (!silentInit) showToast(data.error || 'Sandi salah');
+          hideLoader();
+          return;
+        }
+        state.pin = pin;
+        sessionStorage.setItem('santri_pin', pin);
+        state.students = data.students || [];
+
+        document.getElementById('loginView').classList.add('hidden');
+        document.getElementById('appView').classList.remove('hidden');
+
+        updateDashboardCounts();
+        if (state.activeStudentId) {
+          const stillExists = state.students.find(s => s.ID_Santri === state.activeStudentId);
+          if (stillExists) renderStudentModal(stillExists);
+          else closeModal('studentModal');
+        }
+        renderCurrentView();
+      } catch (err) {
+        showToast('Gagal terhubung ke server: ' + err.message);
+      } finally {
+        hideLoader();
+      }
+    }
+
+    function refreshData() {
+      if (state.pin) fetchStudents(state.pin, false);
+    }
+
+    function logout() {
+      sessionStorage.removeItem('santri_pin');
+      state = { pin: '', students: [], selectedGender: null, selectedClass: null, activeStudentId: null, isSearching: false };
+      document.getElementById('pinInput').value = '';
+      document.getElementById('appView').classList.add('hidden');
+      document.getElementById('loginView').classList.remove('hidden');
+    }
+
+    function updateDashboardCounts() {
+      const pa = state.students.filter(s => s.Jenis_Kelamin === 'Putra').length;
+      const pi = state.students.filter(s => s.Jenis_Kelamin === 'Putri').length;
+      document.getElementById('countPutra').textContent = `${pa} Santri Mukim`;
+      document.getElementById('countPutri').textContent = `${pi} Santri Mukim`;
+    }
+
+    function renderCurrentView() {
+      if (state.isSearching) return;
+      document.getElementById('stepGender').classList.add('hidden');
+      document.getElementById('stepClass').classList.add('hidden');
+      document.getElementById('stepStudents').classList.add('hidden');
+
+      if (!state.selectedGender) {
+        document.getElementById('topSubtitle').textContent = `Total ${state.students.length} santri mukim`;
+        document.getElementById('stepGender').classList.remove('hidden');
+      } else if (!state.selectedClass) {
+        document.getElementById('topSubtitle').textContent = `Santri ${state.selectedGender}`;
+        renderClasses();
+        document.getElementById('stepClass').classList.remove('hidden');
+      } else {
+        document.getElementById('topSubtitle').textContent = `${state.selectedGender} • Kelas ${state.selectedClass}`;
+        renderStudentList(
+          state.students.filter(s => s.Jenis_Kelamin === state.selectedGender && s.Kelas === state.selectedClass),
+          `Kelas ${state.selectedClass} (${state.selectedGender})`
+        );
+        document.getElementById('stepStudents').classList.remove('hidden');
+      }
+    }
+
+    function selectGender(gender) {
+      state.selectedGender = gender;
+      state.selectedClass = null;
+      renderCurrentView();
+    }
+
+    function goBackToGender() {
+      state.selectedGender = null;
+      state.selectedClass = null;
+      renderCurrentView();
+    }
+
+    function selectClass(kelas) {
+      state.selectedClass = kelas;
+      renderCurrentView();
+    }
+
+    function goBackFromStudents() {
+      if (state.isSearching) {
+        document.getElementById('globalSearch').value = '';
+        state.isSearching = false;
+        renderCurrentView();
+        return;
+      }
+      state.selectedClass = null;
+      renderCurrentView();
+    }
+
+    function renderClasses() {
+      const list = state.students.filter(s => s.Jenis_Kelamin === state.selectedGender);
+      const uniqueClasses = [...new Set(list.map(s => s.Kelas))].sort((a, b) => {
+        const ia = CLASS_ORDER.indexOf(a);
+        const ib = CLASS_ORDER.indexOf(b);
+        if (ia !== -1 && ib !== -1) return ia - ib;
+        if (ia !== -1) return -1;
+        if (ib !== -1) return 1;
+        return a.localeCompare(b);
+      });
+
+      document.getElementById('classSectionTitle').textContent = `Daftar Kelas (${state.selectedGender})`;
+      const grid = document.getElementById('classGrid');
+      grid.innerHTML = uniqueClasses.map(cls => {
+        const members = list.filter(s => s.Kelas === cls);
+        const kkDone = members.filter(s => s.Link_KK).length;
+        return `
+          <div class="class-card" onclick="selectClass('${escapeHtml(cls)}')">
+            <h4>${escapeHtml(cls)}</h4>
+            <div class="class-meta">
+              <span>${members.length} santri</span>
+              <span class="kk-badge">KK: ${kkDone}/${members.length}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function handleSearch(query) {
+      const q = query.trim().toLowerCase();
+      if (!q) {
+        state.isSearching = false;
+        renderCurrentView();
+        return;
+      }
+      state.isSearching = true;
+      document.getElementById('stepGender').classList.add('hidden');
+      document.getElementById('stepClass').classList.add('hidden');
+      document.getElementById('stepStudents').classList.remove('hidden');
+      document.getElementById('topSubtitle').textContent = 'Pencarian Santri';
+
+      const filtered = state.students.filter(s =>
+        s.Nama_Lengkap.toLowerCase().includes(q) ||
+        s.Kelas.toLowerCase().includes(q)
+      );
+      renderStudentList(filtered, `Hasil Pencarian "${query}"`, true);
+    }
+
+    function renderStudentList(list, title, showClassMeta = false) {
+      document.getElementById('studentSectionTitle').textContent = title;
+      document.getElementById('studentListCount').textContent = `${list.length} anak`;
+      const container = document.getElementById('studentList');
+
+      if (list.length === 0) {
+        container.innerHTML = `<div style="text-align:center; padding:30px; color:var(--muted);">Data santri tidak ditemukan.</div>`;
+        return;
+      }
+
+      container.innerHTML = list.map(s => {
+        const extraCount = (s.Dokumen_Lainnya_List || []).length;
+        return `
+          <div class="student-item" onclick="openStudentModal('${s.ID_Santri}')">
+            <div>
+              <div class="student-name">${escapeHtml(s.Nama_Lengkap)}</div>
+              ${showClassMeta ? `<div class="student-sub">${escapeHtml(s.Jenis_Kelamin)} • ${escapeHtml(s.Kelas)}</div>` : ''}
+              <div class="doc-pills">
+                <span class="pill ${s.Link_KK ? 'pill-ok' : 'pill-no'}">${s.Link_KK ? '✓ KK' : 'KK'}</span>
+                <span class="pill ${s.Link_SP ? 'pill-ok' : 'pill-no'}">${s.Link_SP ? '✓ SP' : 'SP'}</span>
+                <span class="pill ${s.Link_Formulir ? 'pill-ok' : 'pill-no'}">${s.Link_Formulir ? '✓ Formulir' : 'Formulir'}</span>
+                ${extraCount > 0 ? `<span class="pill pill-extra">+${extraCount} Lainnya</span>` : ''}
+              </div>
+            </div>
+            <span style="color:#c59b27; font-size:20px; font-weight:700;">›</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function openStudentModal(idSantri) {
+      const student = state.students.find(s => s.ID_Santri === idSantri);
+      if (!student) return;
+      state.activeStudentId = idSantri;
+      renderStudentModal(student);
+      document.getElementById('studentModal').classList.add('open');
+    }
+
+    function renderStudentModal(s) {
+      document.getElementById('modalStudentName').textContent = s.Nama_Lengkap;
+      document.getElementById('modalStudentMeta').textContent = `${s.Jenis_Kelamin} • Kelas ${s.Kelas} • ID: ${s.ID_Santri}`;
+
+      const mainDocs = [
+        { key: 'KK', label: 'Kartu Keluarga (KK)', url: s.Link_KK },
+        { key: 'SP', label: 'Surat Pernyataan (SP)', url: s.Link_SP },
+        { key: 'FORMULIR', label: 'Formulir Santri', url: s.Link_Formulir }
+      ];
+
+      document.getElementById('mainDocsContainer').innerHTML = mainDocs.map(doc => `
+        <div class="doc-card">
+          <div class="doc-card-head">
+            <span class="doc-title">${doc.label}</span>
+            <span class="pill ${doc.url ? 'pill-ok' : 'pill-no'}">${doc.url ? 'Sudah Diunggah' : 'Belum Ada'}</span>
+          </div>
+          <div class="doc-actions">
+            ${doc.url ? `<a href="${doc.url}" target="_blank" rel="noopener" class="link-btn">👁 Lihat Dokumen</a>` : ''}
+            <label class="btn btn-primary btn-sm" style="cursor:pointer;">
+              ${doc.url ? '🔄 Ganti File' : '📤 Unggah Foto / PDF'}
+              <input type="file" accept="image/*,.pdf" class="hidden" onchange="handleMainDocFile(event, '${doc.key}')" />
+            </label>
+            ${doc.url ? `<button class="btn btn-danger btn-sm" onclick="deleteDoc('${doc.key}', '')">Hapus</button>` : ''}
+          </div>
+        </div>
+      `).join('');
+
+      const extras = s.Dokumen_Lainnya_List || [];
+      const otherContainer = document.getElementById('otherDocsList');
+      if (extras.length === 0) {
+        otherContainer.innerHTML = `<p style="font-size:12px; color:var(--muted);">Belum ada dokumen tambahan.</p>`;
+      } else {
+        otherContainer.innerHTML = extras.map(item => `
+          <div class="extra-item">
+            <div>
+              <div style="font-size:13px; font-weight:700; color:var(--emerald-dark);">${escapeHtml(item.label)}</div>
+              <div style="font-size:11px; color:var(--muted);">${escapeHtml(item.uploadedAt || '')}</div>
+            </div>
+            <div style="display:flex; gap:6px;">
+              <a href="${item.url}" target="_blank" rel="noopener" class="link-btn" style="padding:6px 10px; font-size:12px;">Lihat</a>
+              <button class="btn btn-danger btn-sm" style="padding:6px 10px; font-size:12px;" onclick="deleteDoc('LAINNYA', '${item.id}')">✕</button>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    async function handleMainDocFile(event, docType) {
+      const file = event.target.files[0];
+      if (!file) return;
+      await processAndUploadFile(file, docType, '');
+      event.target.value = '';
+    }
+
+    async function uploadExtraDoc() {
+      const label = document.getElementById('extraDocLabel').value.trim();
+      const fileInput = document.getElementById('extraDocFile');
+      const file = fileInput.files[0];
+      if (!label) return showToast('Isi nama dokumen tambahan dulu');
+      if (!file) return showToast('Pilih file foto atau PDF dulu');
+
+      await processAndUploadFile(file, 'LAINNYA', label);
+      document.getElementById('extraDocLabel').value = '';
+      fileInput.value = '';
+    }
+
+    async function processAndUploadFile(file, docType, docLabel) {
+      if (file.size > 15 * 1024 * 1024) {
+        return showToast('Ukuran file terlalu besar (maks 15 MB)');
+      }
+      showLoader('Mengunggah dokumen ke Google Drive...');
+      try {
+        const prepared = await prepareFilePayload(file);
+        const res = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            pin: state.pin,
+            action: 'uploadDoc',
+            idSantri: state.activeStudentId,
+            docType,
+            docLabel,
+            fileName: prepared.fileName,
+            mimeType: prepared.mimeType,
+            base64Data: prepared.base64Data
+          })
+        });
+        const data = await res.json();
+        if (!data.ok) throw new Error(data.error || 'Gagal mengunggah');
+
+        showToast('Dokumen berhasil disimpan!');
+        await fetchStudents(state.pin, true);
+      } catch (err) {
+        showToast('Error: ' + err.message);
+        hideLoader();
+      }
+    }
+
+    function prepareFilePayload(file) {
+      return new Promise((resolve, reject) => {
+        if (!file.type.startsWith('image/')) {
+          const reader = new FileReader();
+          reader.onload = () => {
+            const base64 = reader.result.split(',')[1];
+            resolve({ fileName: file.name, mimeType: file.type || 'application/pdf', base64Data: base64 });
+          };
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+          return;
+        }
+
+        const img = new Image();
+        const url = URL.createObjectURL(file);
+        img.onload = () => {
+          URL.revokeObjectURL(url);
+          const MAX_DIM = 1600;
+          let { width, height } = img;
+          if (width > MAX_DIM || height > MAX_DIM) {
+            if (width > height) {
+              height = Math.round((height * MAX_DIM) / width);
+              width = MAX_DIM;
+            } else {
+              width = Math.round((width * MAX_DIM) / height);
+              height = MAX_DIM;
+            }
+          }
+          const canvas = document.createElement('canvas');
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+          const dataUrl = canvas.toDataURL('image/jpeg', 0.82);
+          resolve({
+            fileName: file.name.replace(/\.[^.]+$/, '') + '.jpg',
+            mimeType: 'image/jpeg',
+            base64Data: dataUrl.split(',')[1]
+          });
+        };
+        img.onerror = reject;
+        img.src = url;
+      });
+    }
+
+    async function deleteDoc(docType, docId) {
+      if (!confirm('Hapus tautan dokumen ini dari data santri?')) return;
+      showLoader('Menghapus dokumen...');
+      try {
+        const res = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            pin: state.pin,
+            action: 'deleteDoc',
+            idSantri: state.activeStudentId,
+            docType,
+            docId
+          })
+        });
+        const data = await res.json();
+        if (!data.ok) throw new Error(data.error || 'Gagal menghapus dokumen');
+        showToast('Dokumen dihapus');
+        await fetchStudents(state.pin, true);
+      } catch (err) {
+        showToast('Error: ' + err.message);
+        hideLoader();
+      }
+    }
+
+    async function confirmDeleteStudent() {
+      const s = state.students.find(item => item.ID_Santri === state.activeStudentId);
+      if (!s) return;
+      if (!confirm(`Yakin ingin menghapus data "${s.Nama_Lengkap}" dari daftar santri mukim?`)) return;
+
+      showLoader('Menghapus data santri...');
+      try {
+        const res = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            pin: state.pin,
+            action: 'deleteStudent',
+            idSantri: state.activeStudentId
+          })
+        });
+        const data = await res.json();
+        if (!data.ok) throw new Error(data.error || 'Gagal menghapus santri');
+
+        state.activeStudentId = null;
+        closeModal('studentModal');
+        showToast('Data santri berhasil dihapus');
+        await fetchStudents(state.pin, true);
+      } catch (err) {
+        showToast('Error: ' + err.message);
+        hideLoader();
+      }
+    }
+
+    function openAddStudentModal() {
+      if (state.selectedGender) {
+        document.getElementById('newStudentGender').value = state.selectedGender;
+      }
+      if (state.selectedClass) {
+        document.getElementById('newStudentClass').value = state.selectedClass;
+      }
+      document.getElementById('addStudentModal').classList.add('open');
+    }
+
+    document.getElementById('addStudentForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nama = document.getElementById('newStudentName').value.trim();
+      const gender = document.getElementById('newStudentGender').value;
+      const kelas = document.getElementById('newStudentClass').value.trim();
+      if (!nama || !kelas) return;
+
+      showLoader('Menambahkan santri...');
+      try {
+        const res = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            pin: state.pin,
+            action: 'addStudent',
+            nama,
+            gender,
+            kelas
+          })
+        });
+        const data = await res.json();
+        if (!data.ok) throw new Error(data.error || 'Gagal menambah santri');
+
+        document.getElementById('newStudentName').value = '';
+        closeModal('addStudentModal');
+        showToast('Santri baru ditambahkan!');
+        await fetchStudents(state.pin, true);
+      } catch (err) {
+        showToast('Error: ' + err.message);
+        hideLoader();
+      }
+    });
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('open');
+      if (id === 'studentModal') state.activeStudentId = null;
+    }
+
+    function closeModalOnBackdrop(e, id) {
+      if (e.target.id === id) closeModal(id);
+    }
+
+    function showLoader(text) {
+      document.getElementById('loaderText').textContent = text || 'Memproses...';
+      document.getElementById('loader').classList.add('show');
+    }
+
+    function hideLoader() {
+      document.getElementById('loader').classList.remove('show');
+    }
+
+    let toastTimer;
+    function showToast(msg) {
+      const el = document.getElementById('toast');
+      el.textContent = msg;
+      el.style.display = 'block';
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => { el.style.display = 'none'; }, 3200);
+    }
+
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+  </script>
+</body>
+</html>
